@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "TT Firs Neue";
+}
+div,
+header,
+footer,
+section,
+article,
+aside,
+main,
+nav,
+html,
+body,
+ul,
+li {
+  display: flex;
+}
+
+html,
+body,
+#__nuxt,
+#__layout {
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+button,
+input {
+  cursor: pointer;
+}
+input {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+body{
+  background-color: #181818;
+}
+html{
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  html{
+    font-size: 12px;
+  }
+}
