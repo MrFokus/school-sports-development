@@ -59,12 +59,14 @@ export default {
   }
   .call>p{
     font-size: 18px;
+    color: white;
   }
   .call>button{
     outline: 0;
     border: 0;
     background: none;
     font-size: 14px;
+    color: white;
   }
   .call>button:active{
     color: white;
