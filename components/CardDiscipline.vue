@@ -77,7 +77,7 @@ h3{
   width: 100%;
   padding: 21px 0;
   background: none;
-  outline: #EDB406 1px solid;
+  outline: #EDB406 2px solid;
   border: 0;
   color: white;
   font-size: 12px;
