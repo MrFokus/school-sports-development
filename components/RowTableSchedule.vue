@@ -19,7 +19,11 @@
           </div>
           <div class="addresses">
             <div class="address" v-for="day of teacher.days">
-              <p>{{day.address}}</p>
+              <div class="container">
+                <p v-if="day.address_hall" class="visible-address">{{day.address}}</p>
+                <p class="standard-address" v-else>{{day.address}}</p>
+                <div class="modal-address"><p class="hidden-address">{{day.address_hall}}</p></div>
+              </div>
             </div>
           </div>
         </div>
@@ -87,6 +91,7 @@ h1, h3 {
   height: fit-content;
   align-items: center;
   transition:  background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .btn-show-all-schedule:hover {
@@ -136,7 +141,45 @@ h1, h3 {
 /*  background-color: #EDB406;*/
 /*}*/
 .address{
+  flex-grow: 1;
   justify-content: flex-end;
 }
+.addresses{
+  position: relative;
+}
+.modal-address{
+  position: absolute;
+  z-index: 9;
+  display: none;
 
+  right: 110%;
+  bottom:0%;
+  background-color: #131313;
+  padding: 10px;
+  height: fit-content;
+  width: max-content;
+  max-width: 500px;
+  border: 1px #EDB406 solid;
+}
+.modal-address p{
+  width: 100%;
+  text-overflow: ellipsis;
+}
+.visible-address{
+  display: block;
+  text-decoration: underline #EDB406;
+  color: #EDB406 !important;
+  line-height: 100%;
+}
+.visible-address:hover, .modal-address:hover + .visible-address{
+  color: #A3A3A3 !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+.visible-address:hover+ .modal-address,.modal-address:hover{
+  display: inline-block;
+}
+.container{
+  position: relative;
+}
 </style>

@@ -41,19 +41,62 @@
           <table-schedule :schedule="schedule"/>
         </div>
       </div>
+      <div class="block-gallery">
+        <p>НАШИ ТЕРНИРОВКИ</p>
+        <h1>ГАЛЕРЕЯ</h1>
+        <Gallery/>
+      </div>
+      <div class="coaches-block">
+        <div class="title">
+          <p>НАШИ  НАСТАВНИКИ</p>
+          <h1>ТРЕНЕРЫ</h1>
+        </div>
+        <coaches/>
+      </div>
+      <div class="contacts">
+        <div class="title">
+          <h1>
+            КОНТАКТЫ
+          </h1>
+        </div>
+        <div class="contacts-info">
+          <div class="mail">
+            <img src="@/assets/img/mail-icon.svg" alt="">
+            <p>example@mail.ru</p>
+          </div>
+          <div class="phone">
+            <img src="@/assets/img/smartphone-icon.svg" alt="">
+            <p>+7 (888) 888-88-88</p>
+          </div>
+          <div class="address">
+            <img src="@/assets/img/map-point-icon.svg" alt="">
+            <p>г. Липецк, ул. Перова 47 </p>
+          </div>
+          <div class="messengers">
+            <nuxt-link to="/"><img src="@/assets/img/telegram-icon.svg" alt=""></nuxt-link>
+            <nuxt-link to="/"><img src="@/assets/img/vk-icon.svg" alt=""></nuxt-link>
+          </div>
+        </div>
+      </div>
     </div>
-
+<!--    <yandex-map>-->
+<!--      -->
+<!--    </yandex-map>-->
   </main>
 </template>
 
 <script>
 import CardDiscipline from "@/components/CardDiscipline";
-import TableSchedule from "@/components/TableSchedule"
+import TableSchedule from "@/components/TableSchedule";
+import Gallery from "@/components/Gallery"
+import Coaches from "@/components/Coaches";
 
 export default {
   components: {
     CardDiscipline,
     TableSchedule,
+    Gallery,
+    Coaches,
   },
   data() {
     return {
@@ -92,25 +135,25 @@ export default {
                   day: "ВТ/ЧТ",
                   time: "8:30 – 9:30",
                   address: "Школа №18",
-                  address_hall: "ул. Леонтия Кривенкова 25",
+                  address_hall: "УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25",
                 },
                 {
                   day: "ВТ/ЧТ",
                   time: "17:30 – 18:30",
                   address: "Школа №18",
-                  address_hall: "ул. Леонтия Кривенкова 25",
+                  address_hall: "УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25",
                 },
                 {
                   day: "ПН/ПТ",
                   time: "17:30 – 18:30",
                   address: "Школа №48",
-                  address_hall: "ул. Космонавтов 82/4",
+                  address_hall: "УЛ. КОСМОНАВТОВ 82/4",
                 },
                 {
                   day: "ПН/ПТ",
                   time: "20:00 – 21:00",
                   address: "Школа №49",
-                  address_hall: "Звёздная ул. 12",
+                  address_hall: "УЛ. ЗВЁЗДНАЯ 12",
                 },
               ],
             },
@@ -121,31 +164,31 @@ export default {
                   day: "ВТ/ЧТ",
                   time: "19:00 – 20:00",
                   address: "Школа №33",
-                  address_hall: "бул. Шубина 15",
+                  address_hall: "БУЛ. ШУБИНА 15",
                 },
                 {
                   day: "ЧТ",
                   time: "15:10 – 16:40",
                   address: "ГДЮЦ «Спортивный»",
-                  address_hall: "ул. Стаханова 28Б",
+                  address_hall: "УЛ. СТАХАНОВА 28Б",
                 },
                 {
                   day: "ЧТ",
                   time: "16:50 – 18:20",
                   address: "ГДЮЦ «Спортивный»",
-                  address_hall: "ул. Стаханова 28Б",
+                  address_hall: "УЛ. СТАХАНОВА 28Б",
                 },
                 {
                   day: "СБ",
                   time: "15:20 – 16:50",
                   address: "ГДЮЦ «Спортивный»",
-                  address_hall: "ул. Стаханова 28Б",
+                  address_hall: "УЛ. СТАХАНОВА 28Б",
                 },
                 {
                   day: "СБ",
                   time: "17:00 – 18:30",
                   address: "ГДЮЦ «Спортивный»",
-                  address_hall: "ул. Стаханова 28Б",
+                  address_hall: "УЛ. СТАХАНОВА 28Б",
                 },
               ],
             },
@@ -209,13 +252,13 @@ export default {
                   day: "ВТ/ЧТ",
                   time: "16:30 – 17:30",
                   address: "Школа №18",
-                  address_hall: "ул. Леонтия Кривенкова 25",
+                  address_hall: "УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25",
                 },
                 {
                   day: "ПН/ПТ",
                   time: "17:30 – 18:30",
                   address: "Школа №48",
-                  address_hall: "ул. Космонавтов 82/4",
+                  address_hall: "УЛ. КОСМОНАВТОВ 82/4",
                 },
               ],
 
@@ -301,25 +344,25 @@ export default {
                 {
                   day: "СР/ПТ",
                   time: "13:30 – 14:30",
-                  address: "Филлипченко 7/4",
+                  address: "ФИЛЛИПЧЕНКО 7/4",
                   address_hall: null,
                 },
                 {
                   day: "ПН/СБ",
                   time: "13:20 – 14:20",
-                  address: "Филлипченко 7/4",
+                  address: "ФИЛЛИПЧЕНКО 7/4",
                   address_hall: null,
                 },
                 {
                   day: "ПТ",
                   time: "15:10 – 16:10",
-                  address: "Филлипченко 7/4 ",
+                  address: "ФИЛЛИПЧЕНКО 7/4",
                   address_hall: null,
                 },
                 {
                   day: "ПТ",
                   time: "16:50 – 17:50",
-                  address: "Филлипченко 7/4 ",
+                  address: "ФИЛЛИПЧЕНКО 7/4",
                   address_hall: null,
                 },
                 {
@@ -486,7 +529,7 @@ h1 {
   flex-direction: column;
 }
 
-.title-training > p {
+.title-training > p,.block-gallery>p {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 600;
@@ -529,5 +572,63 @@ h1 {
   font-size: 16px;
   transition: background-color .3s;
 }
-
+.block-gallery{
+  z-index: 10;
+  flex-direction: column;
+  width: 100vw !important;
+  padding-left: calc((100vw - 1300px) / 2);
+  margin-top: 80px !important;
+}
+.coaches-block{
+  z-index: 6;
+  align-items: center;
+  padding-top: 190px;
+  width: 100vw !important;
+  padding-left: calc((100vw - 1300px) / 2);
+}
+.block-gallery p, .coaches-block p{
+  color: #A3A3A3;
+  font-size: 20px;
+  font-weight: 600;
+  width: auto;
+}
+.coaches-block h1{
+  width: auto;
+}
+.coaches-block>.title{
+  margin: 0;
+  width: fit-content;
+  margin-right: 100px;
+}
+.background-block>div{
+  z-index: 10;
+}
+.background-block>.contacts{
+  margin: 120px auto 0 auto;
+}
+.contacts> .title{
+  height: 100%;
+  margin: 0;
+  justify-content: center;
+}
+.contacts-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 60px;
+  row-gap: 40px;
+}
+.contacts-info>div{
+  align-items: center;
+}
+.contacts-info p{
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+.contacts-info img{
+  width: 40px;
+  max-height: 40px;
+  margin-right: 16px;
+}
 </style>
