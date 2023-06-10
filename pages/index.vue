@@ -1,8 +1,6 @@
 <template>
   <main>
-    <div class="background-block">
-      <img class="scratches-background" src="~/assets/img/scratches-background.png" alt="">
-      <img src="~/assets/img/black-img.png" alt="" class="black-img">
+    <div class="background-block" :style="{background: `url('${require(`~/assets/img/scratches-background.png`)}`, backgroundSize: 'cover'}">
       <div class="content">
         <div class="title-block">
           <div class="title">
@@ -18,8 +16,9 @@
         </div>
       </div>
     </div>
-    <div class="background-block" style="z-index: 5">
-      <img class="first-break-background" src="~/assets/img/first-break-background.png" alt="">
+    <div
+      :style="{zIndex:'10',marginTop:'-190px' ,background: `url('${require(`~/assets/img/first-break-background.png`)}')`, backgroundSize: 'cover'}"
+      class="background-block">
       <div class="training">
         <div class="title-training">
           <p>НАШИ</p>
@@ -30,8 +29,8 @@
         </div>
       </div>
     </div>
-    <div class="background-block" style="z-index: 6">
-      <img class="second-break-background" src="~/assets/img/second-break-background.png" alt="">
+    <div :style="{paddingBottom:'70px',background: `url('${require(`~/assets/img/second-break-background.png`)}')`, backgroundSize: 'cover'}" class="background-block"
+         style="z-index: 6; background-size: cover;">
       <div class="schedule-block">
         <div class="title-schedule">
           <h1>РАСПИСАНИЕ</h1>
@@ -48,7 +47,7 @@
       </div>
       <div class="coaches-block">
         <div class="title">
-          <p>НАШИ  НАСТАВНИКИ</p>
+          <p>НАШИ НАСТАВНИКИ</p>
           <h1>ТРЕНЕРЫ</h1>
         </div>
         <coaches/>
@@ -79,9 +78,9 @@
         </div>
       </div>
     </div>
-<!--    <yandex-map>-->
-<!--      -->
-<!--    </yandex-map>-->
+    <yandex-map class="map" :coords="coord" :zoom="17" ref="map" :controls="[]">
+      <ymap-marker :icons="icon" :coords="coord" :searchControl="false" marker-id="123"/>
+    </yandex-map>
   </main>
 </template>
 
@@ -100,6 +99,7 @@ export default {
   },
   data() {
     return {
+      coord: [52.600753, 39.566943],
       schedule: [
         {
           discipline: 'КАРАТЭ',
@@ -420,6 +420,10 @@ main {
   width: 100%;
   position: relative;
   flex-direction: column;
+  background-size: cover;
+}
+.background-block:first-child{
+  padding-bottom: 90px;
 }
 
 .background-block > div {
@@ -431,7 +435,9 @@ main {
   position: absolute;
   width: 100%;
   object-fit: cover;
+  height: inherit;
 }
+
 /*.second-break-background {*/
 /*  z-index: 4;*/
 /*}*/
@@ -529,7 +535,7 @@ h1 {
   flex-direction: column;
 }
 
-.title-training > p,.block-gallery>p {
+.title-training > p, .block-gallery > p {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 600;
@@ -547,21 +553,24 @@ h1 {
   z-index: 8;
 }
 
-.schedule-block{
+.schedule-block {
   flex-direction: column;
   padding: 150px 0px 0px 0px;
 }
+
 .title-schedule {
   justify-content: center;
   margin-bottom: 60px;
 }
-.title-schedule>h1{
+
+.title-schedule > h1 {
   width: fit-content;
   margin-right: 22px;
   font-weight: 700;
   font-size: 48px;
 }
-.title-schedule>button{
+
+.title-schedule > button {
   width: 185px;
   padding: 21px 0;
   background: none;
@@ -572,63 +581,91 @@ h1 {
   font-size: 16px;
   transition: background-color .3s;
 }
-.block-gallery{
+
+.block-gallery {
   z-index: 10;
   flex-direction: column;
   width: 100vw !important;
   padding-left: calc((100vw - 1300px) / 2);
   margin-top: 80px !important;
 }
-.coaches-block{
+
+.coaches-block {
   z-index: 6;
   align-items: center;
   padding-top: 190px;
   width: 100vw !important;
   padding-left: calc((100vw - 1300px) / 2);
 }
-.block-gallery p, .coaches-block p{
+
+.block-gallery p, .coaches-block p {
   color: #A3A3A3;
   font-size: 20px;
   font-weight: 600;
   width: auto;
 }
-.coaches-block h1{
+
+.coaches-block h1 {
   width: auto;
 }
-.coaches-block>.title{
+
+.coaches-block > .title {
   margin: 0;
   width: fit-content;
   margin-right: 100px;
 }
-.background-block>div{
+
+.background-block > div {
   z-index: 10;
 }
-.background-block>.contacts{
+
+.background-block > .contacts {
   margin: 120px auto 0 auto;
 }
-.contacts> .title{
+
+.contacts > .title {
   height: 100%;
   margin: 0;
   justify-content: center;
 }
-.contacts-info{
+
+.contacts-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   column-gap: 60px;
   row-gap: 40px;
 }
-.contacts-info>div{
+
+.contacts-info > div {
   align-items: center;
 }
-.contacts-info p{
+
+.contacts-info p {
   color: white;
   font-size: 20px;
   font-weight: 800;
 }
-.contacts-info img{
+
+.contacts-info img {
   width: 40px;
   max-height: 40px;
   margin-right: 16px;
 }
+.map {
+  z-index: 10;
+  height: 60vh;
+}
+</style>
+<style>
+.ymaps-2-1-79-ground-pane {
+  /*-webkit-filter: grayscale(1);*/
+  /*-moz-filter: grayscale(1);*/
+  /*-o-filter: grayscale(1);*/
+  filter: grayscale(100%);
+}
+.ymaps-2-1-79-inner-panes{
+  mix-blend-mode: difference;
+}
+
 </style>

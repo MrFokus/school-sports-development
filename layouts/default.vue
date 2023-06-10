@@ -2,6 +2,9 @@
   <div class="default">
     <Header  class="header"/>
     <Nuxt />
+    <footer>
+
+    </footer>
   </div>
 </template>
 
@@ -24,5 +27,10 @@ export default {
   position: sticky;
   top: 0;
   z-index: 999;
+}
+footer{
+  width: 100%;
+  height: 100px;
+  background-color: #181818;
 }
 </style>
