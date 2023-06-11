@@ -5,10 +5,10 @@
       <div class="content">
         <h3>{{ card.title }}</h3>
         <p class="age">от {{ card.age }} лет</p>
-        <button class="price">от {{card.price}} ₽</button>
+        <button @click="$store.commit('modal/setModalActive',true)" class="price">от {{card.price}} ₽</button>
       </div>
     </div>
-    <button class="sign-up-training"> ЗАПИСАТЬСЯ НА ПРОБНУЮ ТРЕНИРОВКУ </button>
+    <button @click="$store.commit('modal/setModalActive',true)" class="sign-up-training"> ЗАПИСАТЬСЯ НА ПРОБНУЮ ТРЕНИРОВКУ </button>
   </div>
 </template>
 

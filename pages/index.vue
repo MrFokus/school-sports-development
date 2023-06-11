@@ -6,7 +6,7 @@
           <div class="title">
             <h1>ШКОЛА СПОРТИВНОГО РАЗВИТИЯ ИМЕНИ <br> В. Н. КЫЗЫМ</h1>
             <div class="btn-block">
-              <button>ЗАПИСАТЬСЯ НА БЕСПЛАТНУЮ ТРЕНИРОВКУ</button>
+              <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ НА БЕСПЛАТНУЮ ТРЕНИРОВКУ</button>
               <img src="~/assets/img/btn-arrow.png" alt="" class="btn-arrow">
             </div>
           </div>
@@ -34,7 +34,7 @@
       <div class="schedule-block">
         <div class="title-schedule">
           <h1>РАСПИСАНИЕ</h1>
-          <button>ЗАПИСАТЬСЯ</button>
+          <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
         </div>
         <div class="schedule">
           <table-schedule :schedule="schedule"/>
@@ -78,9 +78,13 @@
         </div>
       </div>
     </div>
-    <yandex-map class="map" :coords="coord" :zoom="17" ref="map" :controls="[]">
-      <ymap-marker :icons="icon" :coords="coord" :searchControl="false" marker-id="123"/>
+    <ClientOnly>
+    <yandex-map class="map" :coords="main_coord" :zoom="17" ref="map" :controls="['fullscreenControl']">
+      <ymap-marker :coords="main_coord" :searchControl="false" :markerId="1"/>
+      <ymap-marker :key="index++" v-for="(c,index) in coord" :coords="c" :searchControl="false" :markerId="index++"/>
     </yandex-map>
+    </ClientOnly>
+    <modal-form v-if="$store.getters['modal/active']===true" @closeModal="$store.commit('modal/setModalActive',false)" class="form"/>
   </main>
 </template>
 
@@ -89,6 +93,7 @@ import CardDiscipline from "@/components/CardDiscipline";
 import TableSchedule from "@/components/TableSchedule";
 import Gallery from "@/components/Gallery"
 import Coaches from "@/components/Coaches";
+import ModalForm from "@/components/ModalForm";
 
 export default {
   components: {
@@ -96,10 +101,24 @@ export default {
     TableSchedule,
     Gallery,
     Coaches,
+    ModalForm,
+  },
+  mounted() {
+    console.log(this.$store.getters["modal/active"])
   },
   data() {
     return {
-      coord: [52.600753, 39.566943],
+      modal:false,
+      main_coord: [52.600753, 39.566943],
+      coord:[
+        [52.598325, 39.558508],
+        [52.583165, 39.505077],
+        [52.613370, 39.547243],
+        [52.590945, 39.518785],
+        [52.589118, 39.523878],
+        [52.606141, 39.548815],
+        [52.535731, 39.589455],
+      ],
       schedule: [
         {
           discipline: 'КАРАТЭ',
@@ -431,24 +450,6 @@ main {
   width: min(1300px, 100%);
 }
 
-.scratches-background, .black-img, .first-break-background, .second-break-background {
-  position: absolute;
-  width: 100%;
-  object-fit: cover;
-  height: inherit;
-}
-
-/*.second-break-background {*/
-/*  z-index: 4;*/
-/*}*/
-
-/*.scratches-background {*/
-/*  z-index: 4;*/
-/*}*/
-
-/*.black-img {*/
-/*  z-index: 2;*/
-/*}*/
 
 .first-break-background {
   top: -80px;
@@ -655,6 +656,12 @@ h1 {
 .map {
   z-index: 10;
   height: 60vh;
+}
+.form{
+  position: fixed;
+  z-index: 100;
+
+  top: 0;
 }
 </style>
 <style>
