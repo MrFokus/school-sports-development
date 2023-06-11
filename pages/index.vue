@@ -31,8 +31,9 @@
     </div>
     <div :style="{paddingBottom:'70px',background: `url('${require(`~/assets/img/second-break-background.png`)}')`, backgroundSize: 'cover'}" class="background-block"
          style="z-index: 6; background-size: cover;">
-      <div class="schedule-block">
+      <div id="schedule" class="schedule-block">
         <div class="title-schedule">
+
           <h1>РАСПИСАНИЕ</h1>
           <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
         </div>
@@ -45,14 +46,14 @@
         <h1>ГАЛЕРЕЯ</h1>
         <Gallery/>
       </div>
-      <div class="coaches-block">
+      <div id="teachers" class="coaches-block">
         <div class="title">
           <p>НАШИ НАСТАВНИКИ</p>
           <h1>ТРЕНЕРЫ</h1>
         </div>
         <coaches/>
       </div>
-      <div class="contacts">
+      <div id="contacts" class="contacts">
         <div class="title">
           <h1>
             КОНТАКТЫ
@@ -581,6 +582,12 @@ h1 {
   font-weight: 700;
   font-size: 16px;
   transition: background-color .3s;
+}
+.title-schedule > button:hover{
+  background-color: #EDB406;
+}
+.title-schedule > button:active{
+  background-color: #c79600;
 }
 
 .block-gallery {

@@ -8,17 +8,29 @@
       <div class="logo">
         <nuxt-link to="/"><img src="~/assets/img/Logo.svg" alt=""></nuxt-link>
       </div>
-      <div class="burger-menu">
-        <img src="~/assets/img/BurgerMenu.svg" alt="">
+      <div class="container-menu">
+        <div @click="menuActive=!menuActive" :class="['burger-menu',{'menu-active':menuActive}]">
+          <div class="burger-component"/>
+          <div class="burger-component"/>
+        </div>
       </div>
+      <Menu v-if="menuActive"/>
     </div>
+    <div v-if="menuActive" @click="menuActive=false" class="out-space"/>
   </header>
 </template>
 
 <script>
-//TODO: Сделать компонент меню
+import Menu from "@/components/Menu"
 export default {
-
+    data(){
+      return{
+        menuActive:false,
+      }
+    },
+    components:{
+      Menu,
+    }
 }
 </script>
 
@@ -35,6 +47,12 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 5px 0;
+    position: relative;
+  }
+  .out-space{
+    position: fixed;
+    width: 100vw;
+    height: 200vh;
   }
   img{
     height: fit-content;
@@ -48,9 +66,6 @@ export default {
   }
   .logo{
     justify-content: center;
-  }
-  .burger-menu{
-    justify-content: flex-end;
   }
   .logo>a{
     display: inline-block;
@@ -70,5 +85,41 @@ export default {
   }
   .call>button:active{
     color: white;
+  }
+  .container-menu{
+    justify-content: flex-end;
+  }
+  .burger-menu{
+    flex-direction: column;
+    justify-content: center;
+    min-height: 10px;
+    min-width: 18px;
+    position: relative;
+    cursor: pointer;
+  }
+  .burger-component {
+    position: absolute;
+    width: 20px;
+    background-color: white;
+    border: white 1.5px solid;
+    border-radius: 999px;
+    transition: all 0.2s;
+  }
+  .burger-component:first-child {
+    top: 0;
+  }
+  .burger-component:not(.burger-component:first-child) {
+    margin-top: 4px;
+    bottom: 0;
+  }
+  .menu-active .burger-component:first-child {
+    transform: rotate(45deg) scale(1.2);
+    transform-origin: center center;
+    top:35%
+  }
+  .menu-active .burger-component:last-child {
+    transform-origin: center center;
+    transform: rotate(-45deg) scale(1.2);
+    bottom: 35%;
   }
 </style>
