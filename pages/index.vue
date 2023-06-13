@@ -73,8 +73,8 @@
             <p>г. Липецк, ул. Перова 47 </p>
           </div>
           <div class="messengers">
-            <nuxt-link to="/"><img src="@/assets/img/telegram-icon.svg" alt=""></nuxt-link>
-            <nuxt-link to="/"><img src="@/assets/img/vk-icon.svg" alt=""></nuxt-link>
+            <a href="https://t.me/karatelipetsk"><img src="@/assets/img/telegram-icon.svg" alt=""></a>
+            <a href="https://vk.com/kickboxinglipetsk"><img src="@/assets/img/vk-icon.svg" alt=""></a>
           </div>
         </div>
       </div>

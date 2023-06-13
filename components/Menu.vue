@@ -3,14 +3,17 @@
     <div class="content">
       <h1>Меню</h1>
       <ul class="redirect">
-        <li><nuxt-link to="/info/karate">Тренировки Каратэ</nuxt-link></li>
-        <li><nuxt-link to="/info/kickboxing">Тренировки Кикбоксинг</nuxt-link></li>
-        <li><nuxt-link to="/info/child-training">Детские развиващие тренировки</nuxt-link></li>
-        <li><nuxt-link to="/school">О нас</nuxt-link></li>
+        <li @click="$emit('close-menu')"><nuxt-link to="/">Главная</nuxt-link></li>
+        <li @click="$emit('close-menu')"><nuxt-link to="/info/karate">Тренировки Каратэ</nuxt-link></li>
+        <li @click="$emit('close-menu')"><nuxt-link to="/info/kickboxing">Тренировки Кикбоксинг</nuxt-link></li>
+        <li @click="$emit('close-menu')"><nuxt-link to="/info/child-training">Детские развиващие тренировки</nuxt-link></li>
+        <li @click="$emit('close-menu')"><nuxt-link to="/info/school">О нас</nuxt-link></li>
       </ul>
-      <a href="#schedule">Расписание</a>
-      <a href="#teachers">Тренеры</a>
-      <a href="#contacts">Контакты</a>
+      <div v-if="$route.path==='/'">
+        <a href="#schedule">Расписание</a>
+        <a href="#teachers">Тренеры</a>
+        <a href="#contacts">Контакты</a>
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +35,11 @@
 }
 .redirect{
   padding-bottom: 5px;
-  border-bottom: #EDB406 1px solid;
+}
+.content >div{
+  flex-direction: column;
+  width: 100%;
+  border-top: #EDB406 1px solid;
 }
 a{
   color: white;

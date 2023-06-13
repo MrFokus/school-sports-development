@@ -14,7 +14,7 @@
           <div class="burger-component"/>
         </div>
       </div>
-      <Menu v-if="menuActive"/>
+      <Menu @close-menu="menuActive=false" v-if="menuActive"/>
     </div>
     <div v-if="menuActive" @click="menuActive=false" class="out-space"/>
   </header>
