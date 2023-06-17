@@ -182,4 +182,42 @@ h1, h3 {
 .container{
   position: relative;
 }
+@media (max-width: 1439px) {
+  .row {
+    flex-direction: column;
+  }
+
+  h1{
+    font-size: 2.5vw;
+  }
+  h3{
+    font-size: 1.7vw;
+  }
+
+  .btn-show-all-schedule {
+    padding: 2.1vw 6.25vw;
+  }
+
+
+  .all-schedule {
+    margin: 0 6.25vw;
+  }
+
+  .teacher {
+    padding: 2.4vw 0;
+  }
+  .day:not(:last-child), .time:not(:last-child),.address:not(:last-child){
+    margin-bottom: 2rem;
+  }
+  .teacher p {
+    font-size: 1.39vw;
+  }
+  .teacher h3{
+    font-size: 2vw;
+  }
+  .modal-address{
+    padding: 0.7vw;
+    max-width:34.7vw;
+  }
+}
 </style>

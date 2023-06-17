@@ -85,7 +85,7 @@
       <ymap-marker :key="index++" v-for="(c,index) in coord" :coords="c" :searchControl="false" :markerId="index++"/>
     </yandex-map>
     </ClientOnly>
-    <modal-form v-if="$store.getters['modal/active']===true" @closeModal="$store.commit('modal/setModalActive',false)" class="form"/>
+    <modal-form v-show="$store.getters['modal/active']===true" @closeModal="$store.commit('modal/setModalActive',false)" class="form"/>
   </main>
 </template>
 
@@ -441,6 +441,8 @@ main {
   position: relative;
   flex-direction: column;
   background-size: cover;
+  background-position: top !important;
+  object-fit: contain !important;
 }
 .background-block:first-child{
   padding-bottom: 90px;
@@ -524,6 +526,7 @@ h1 {
 
 .portrait-title > img {
   width: 110%;
+  object-fit: contain;
 }
 
 .training {
@@ -669,6 +672,126 @@ h1 {
   z-index: 100;
 
   top: 0;
+}
+@media (max-width: 1439px) {
+  .background-block>div{
+    width: 100%;
+    padding: 0 4.9vw;
+  }
+  .background-block:first-child{
+    padding-bottom: 6.25vw;
+  }
+  .background-block:nth-child(2){
+    margin-top: -13.2vw !important;
+  }
+  .content{
+    width: 100%;
+  }
+  .title {
+    margin-top: 9.375vw;
+  }
+
+  h1 {
+    width:41.7vw;
+    font-size: 3.33vw;
+  }
+
+  .btn-block {
+    margin: 1.39vw 0 0 0;
+  }
+
+  .btn-block > button {
+    width: 27.8vw;
+    padding: 1.25vw 2.08vw;
+    margin: 0 0 1.7vw 0;
+    font-size: 1vw;
+  }
+
+  .btn-arrow {
+    margin-left: 4.86vw;
+    width: 11.8vw;
+  }
+  .portrait-title {
+    margin-top: 6.6vw;
+    margin-left: 2.08vw;
+  }
+
+  .training {
+    padding-top: 18.75vw !important;
+  }
+
+  .title-training > p, .block-gallery > p {
+    font-size: 1.39vw;
+    margin-bottom: 1.04vw;
+  }
+
+  .cards-discipline {
+    column-gap: 2.8vw;
+    margin-top: 4.17vw;
+  }
+
+
+  .schedule-block {
+    padding: 10.42vw 0px 0px 0px !important;
+  }
+
+  .title-schedule {
+    margin-bottom: 4.17vw;
+  }
+
+  .title-schedule > h1 {
+    margin-right: 1.53vw;
+    font-size: 3.33vw;
+  }
+
+  .title-schedule > button {
+    width: 12.9vw;
+    padding: 1.5vw 0;
+    font-size: 1.1vw;
+  }
+  .block-gallery {
+    margin-top: 5.5vw !important;
+    padding-right: 0 !important;
+  }
+  .coaches-block {
+    padding-top: 13.2vw !important;
+    padding-right: 0 !important;
+  }
+
+  .block-gallery p, .coaches-block p {
+    font-size: 1.4vw;
+  }
+
+  .coaches-block > .title {
+    margin-right: 7vw;
+  }
+
+  .background-block > .contacts {
+    margin: 8.3vw auto 0 auto;
+  }
+
+  .contacts-info {
+    column-gap: 4.2vw;
+    row-gap: 2.8vw;
+  }
+
+  .contacts-info p {
+    font-size: 1.4vw;
+  }
+
+  .contacts-info img {
+    width: 2.8vw;
+    max-height: 2.8vw;
+    margin-right: 1vw;
+  }
+  .map {
+    height: 60vh;
+  }
+  .form{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+  }
 }
 </style>
 <style>

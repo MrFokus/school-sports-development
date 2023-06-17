@@ -27,7 +27,9 @@ export default {
   flex-direction: column;
   width: 100%;
   min-height:210px ;
-  background-size: cover;
+  background-size: cover !important;
+  background-position: center !important;
+
 }
 .content{
   flex-direction: column;
@@ -90,5 +92,29 @@ h3{
 .sign-up-training:active{
   transition: background-color 0s;
   background: #c79600;
+}
+@media (max-width: 1449px) {
+
+  .card{
+    min-height:14.58vw;
+  }
+
+  h3{
+    font-size:1.4vw;
+  }
+  .age{
+    font-size: 1.35vw;
+  }
+  .price{
+    margin: 5vw 0 0 1.8vw;
+    font-size: 1.4vw;
+    padding: 0.5vw 1.3vw;
+  }
+
+  .sign-up-training{
+    margin-top: 2.8vw;
+    padding: 1.5vw 0;
+    font-size: 0.8vw;
+  }
 }
 </style>

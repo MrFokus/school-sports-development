@@ -115,11 +115,37 @@ export default {
   .menu-active .burger-component:first-child {
     transform: rotate(45deg) scale(1.2);
     transform-origin: center center;
-    top:35%
+    top:35%;
+    right: 0;
   }
   .menu-active .burger-component:last-child {
     transform-origin: center center;
     transform: rotate(-45deg) scale(1.2);
     bottom: 35%;
+    margin: 0;
+    right: 0;
+  }
+  @media (max-width: 1439px) {
+    header{
+      width: 100%;
+      padding: 0 4.9vw;
+    }
+    .container{
+      width: 100%;
+      margin: 0.3vw 0;
+    }
+    .call>p{
+      font-size: 1.25vw;
+    }
+    .call>button{
+      font-size: 1vw;
+    }
+    .burger-menu{
+      width: max(10px,1.25vw);
+      aspect-ratio: 3/1;
+    }
+    .burger-component {
+      width: 100%;
+    }
   }
 </style>

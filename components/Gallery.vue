@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <div v-for="s in source" class="video">
-      <iframe :src="s" width="640" height="360" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+      <iframe class="frame" :src="s" :width="width" :height="height" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </template>
@@ -10,7 +10,21 @@
 export default {
   data(){
     return{
+      width:0,
+      height:0,
       source:['https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2']
+    }
+  },
+  methods:{
+    WidthWindow(){
+      this.width=window.innerWidth*(640/1440);
+      this.height=window.innerWidth*(360/1440);
+    }
+  },
+  mounted() {
+    if(process.browser){
+      this.WidthWindow()
+      window.addEventListener('resize', this.WidthWindow)
     }
   }
 }

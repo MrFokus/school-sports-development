@@ -71,5 +71,23 @@ export default {
   color: #A3A3A3;
   margin-top: 20px;
 }
-
+@media (max-width: 1439px) {
+  .coaches {
+    max-width: 100%;
+  }
+  .coach{
+    width: 28.26vw;
+    margin-right: 2.8vw;
+  }
+  .name-block{
+    margin-top: 1.4vw;
+  }
+  .name{
+    font-size: 1.7vw;
+  }
+  .discipline{
+    font-size: 1.4vw;
+    margin-top: 1.4vw;
+  }
+}
 </style>
