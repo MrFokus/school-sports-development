@@ -37,6 +37,9 @@ export default {
       type:Object,
       default:{},
     }
+  },
+  created() {
+    this.$store.dispatch('discipline/getPhoto',this.$route.params.name)
   }
 }
 </script>
@@ -141,5 +144,64 @@ h2{
   font-size: 24px;
   font-weight: 300;
   line-height: 40px;
+}
+@media (max-width: 1439px) {
+  .info-component{
+    width: 100%;
+    padding: 0 5.5vw;
+  }
+  .description p{
+    font-size: 1.4vw;
+    margin-top: 1.4vw;
+    line-height: 2vw;
+  }
+  h1{
+    font-size: 2.5vw;
+    margin-top: 5.5vw;
+  }
+  .name-page{
+    font-size: 2.7vw;
+  }
+  h2{
+    font-size: 2.2vw;
+    margin-top: 2.3vw;
+    margin-bottom: 2.7vw;
+  }
+  .include-list li>span{
+    width: 1.7vw;
+    margin-right: 1.4vw;
+    font-size: 2.5vw;
+  }
+  .include-list li{
+    margin-bottom: 1.7vw;
+    font-size: 1.4vw;
+  }
+  .horizontal{
+    margin-right: 2.7vw;
+  }
+  .vertical{
+    margin-right: 1.7vw;
+  }
+  .gallery{
+    width: 100%;
+    margin-top: 2.7vw;
+  }
+  .teacher{
+    padding: 4.2vw 0;
+  }
+
+  .teacher>img{
+    width: 27.8vw;
+  }
+  .teacher .description{
+    margin-left: 5.5vw;
+  }
+  .teacher h3{
+    font-size: 2.2vw;
+  }
+  .teacher .description p{
+    font-size: 1.7vw;
+    line-height: 2.7vw;
+  }
 }
 </style>

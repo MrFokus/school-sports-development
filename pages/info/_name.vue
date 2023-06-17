@@ -48,4 +48,23 @@ footer .content p{
 .messengers img:last-child{
   margin-left: 28px;
 }
+@media (max-width: 1439px) {
+  footer{
+    padding: 3.4vw 0;
+    margin-top: 4.2vw;
+  }
+  footer .content{
+    width: 100%;
+    padding: 0 5.5vw;
+  }
+  footer .content p{
+    font-size: 1.4vw;
+  }
+  .messengers img:last-child{
+    margin-left: 2vw;
+  }
+  .messengers img{
+    width: 2vw;
+  }
+}
 </style>
