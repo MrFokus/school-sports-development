@@ -56,13 +56,12 @@ export default {
           },5000)
         } else {
           // let res = await this.$axios.get('http://localhost:3001/');
-          let res = await this.$axios.post('http://localhost:3001/', {
+          let res = await this.$axios.post('http://195.133.199.163:3001/', {
             mail: this.mail,
             phone: this.mail,
             comment: this.comment
           })
-          console.log(res)
-          // this.response = res.status.split(' ')[0]
+          this.closeModal()
         }
       }
       else{
