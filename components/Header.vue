@@ -6,7 +6,7 @@
       </div>
       <div class="logo">
         <nuxt-link to="/"><img src="~/assets/img/Logo.svg" alt=""></nuxt-link>
-        <nuxt-link class="mobile" to="/"><img src="~/assets/img/mobile-logo.svg" alt=""></nuxt-link>
+        <nuxt-link class="mobile" to="/"><img src="~/assets/img/mobile-logo.png" alt=""></nuxt-link>
       </div>
       <div class="container-menu">
         <div @click="menuActive=!menuActive" :class="['burger-menu',{'menu-active':menuActive}]">
@@ -192,26 +192,26 @@ div {
     max-height: 100%;
   }
   .mobile>img{
-    max-width: 66px;
+    width: 66px;
+    aspect-ratio: 1/1;
   }
   .logo{
-    max-height: 100%;
-  }
-  .container{
     max-height: 100%;
   }
 
   header {
     /*background: #181818;*/
     background: none;
-    padding: 13px 16px;
+    padding: 13px 18px;
   }
 
   .container {
     justify-content: space-between;
     display: flex;
     align-items: center;
-  }
+    max-height: 100%;
+
+}
   .logo>a:not(.mobile){
     display: none;
   }
