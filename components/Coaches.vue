@@ -21,7 +21,7 @@ export default {
           discipline:"Карате, Кикбоксинг",
         },
         {
-          img: '/coaches/Kyzym_Igor.png',
+          img: '/coaches/Kyzym-Igor.png',
           name:'Кызым Игорь<br>Васильевич',
           discipline:"Карате",
         },
@@ -71,7 +71,7 @@ export default {
   color: #A3A3A3;
   margin-top: 20px;
 }
-@media (max-width: 1439px) {
+@media (max-width: 1439px) and (min-width:426px) {
   .coaches {
     max-width: 100%;
   }

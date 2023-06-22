@@ -168,7 +168,7 @@ h2{
   font-weight: 800;
   margin:0 0 20px 0;
 }
-@media (max-width: 1439px) {
+@media (max-width: 1439px) and (min-width:426px) {
   h2{
     font-size: 2vw;
   }

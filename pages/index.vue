@@ -1,12 +1,14 @@
 <template>
   <main>
-    <div class="background-block" :style="{background: `url('${require(`~/assets/img/scratches-background.png`)}`, backgroundSize: 'cover'}">
+    <div class="background-block"
+         :style="{background: `url('${require(`~/assets/img/scratches-background.png`)}`, backgroundSize: 'cover'}">
       <div class="content">
         <div class="title-block">
           <div class="title">
             <h1>ШКОЛА СПОРТИВНОГО РАЗВИТИЯ ИМЕНИ <br> В. Н. КЫЗЫМ</h1>
             <div class="btn-block">
               <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ НА БЕСПЛАТНУЮ ТРЕНИРОВКУ</button>
+              <button class="mobile" @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
               <img src="~/assets/img/btn-arrow.png" alt="" class="btn-arrow">
             </div>
           </div>
@@ -29,8 +31,10 @@
         </div>
       </div>
     </div>
-    <div :style="{paddingBottom:'70px',background: `url('${require(`~/assets/img/second-break-background.png`)}')`, backgroundSize: 'cover'}" class="background-block"
-         style="z-index: 6; background-size: cover;">
+    <div
+      :style="{paddingBottom:'70px',background: `url('${require(`~/assets/img/second-break-background.png`)}')`, backgroundSize: 'cover'}"
+      class="background-block"
+      style="z-index: 6; background-size: cover;">
       <div id="schedule" class="schedule-block">
         <div class="title-schedule">
 
@@ -80,12 +84,13 @@
       </div>
     </div>
     <ClientOnly>
-    <yandex-map class="map" :coords="main_coord" :zoom="17" ref="map" :controls="['fullscreenControl']">
-      <ymap-marker :coords="main_coord" :searchControl="false" :markerId="1"/>
-      <ymap-marker :key="index++" v-for="(c,index) in coord" :coords="c" :searchControl="false" :markerId="index++"/>
-    </yandex-map>
+      <yandex-map class="map" :coords="main_coord" :zoom="17" ref="map" :controls="['fullscreenControl']">
+        <ymap-marker :coords="main_coord" :searchControl="false" :markerId="1"/>
+        <ymap-marker :key="index++" v-for="(c,index) in coord" :coords="c" :searchControl="false" :markerId="index++"/>
+      </yandex-map>
     </ClientOnly>
-    <modal-form v-show="$store.getters['modal/active']===true" @closeModal="$store.commit('modal/setModalActive',false)" class="form"/>
+    <modal-form v-show="$store.getters['modal/active']===true" @closeModal="$store.commit('modal/setModalActive',false)"
+                class="form"/>
   </main>
 </template>
 
@@ -109,9 +114,9 @@ export default {
   },
   data() {
     return {
-      modal:false,
+      modal: false,
       main_coord: [52.600753, 39.566943],
-      coord:[
+      coord: [
         [52.598325, 39.558508],
         [52.583165, 39.505077],
         [52.613370, 39.547243],
@@ -444,7 +449,8 @@ main {
   background-position: top !important;
   object-fit: contain !important;
 }
-.background-block:first-child{
+
+.background-block:first-child {
   padding-bottom: 90px;
 }
 
@@ -586,10 +592,12 @@ h1 {
   font-size: 16px;
   transition: background-color .3s;
 }
-.title-schedule > button:hover{
+
+.title-schedule > button:hover {
   background-color: #EDB406;
 }
-.title-schedule > button:active{
+
+.title-schedule > button:active {
   background-color: #c79600;
 }
 
@@ -663,36 +671,47 @@ h1 {
   max-height: 40px;
   margin-right: 16px;
 }
+
 .map {
   z-index: 10;
   height: 60vh;
 }
-.form{
+
+.form {
   position: fixed;
   z-index: 100;
 
   top: 0;
 }
-@media (max-width: 1439px) {
-  .background-block>div{
+
+.mobile {
+  display: none !important;
+}
+
+@media (max-width: 1439px) and (min-width: 426px) {
+  .background-block > div {
     width: 100%;
     padding: 0 4.9vw;
   }
-  .background-block:first-child{
+
+  .background-block:first-child {
     padding-bottom: 6.25vw;
   }
-  .background-block:nth-child(2){
+
+  .background-block:nth-child(2) {
     margin-top: -13.2vw !important;
   }
-  .content{
+
+  .content {
     width: 100%;
   }
+
   .title {
     margin-top: 9.375vw;
   }
 
   h1 {
-    width:41.7vw;
+    width: 41.7vw;
     font-size: 3.33vw;
   }
 
@@ -711,6 +730,7 @@ h1 {
     margin-left: 4.86vw;
     width: 11.8vw;
   }
+
   .portrait-title {
     margin-top: 6.6vw;
     margin-left: 2.08vw;
@@ -749,10 +769,12 @@ h1 {
     padding: 1.5vw 0;
     font-size: 1.1vw;
   }
+
   .block-gallery {
     margin-top: 5.5vw !important;
     padding-right: 0 !important;
   }
+
   .coaches-block {
     padding-top: 13.2vw !important;
     padding-right: 0 !important;
@@ -784,13 +806,104 @@ h1 {
     max-height: 2.8vw;
     margin-right: 1vw;
   }
+
   .map {
     height: 60vh;
   }
-  .form{
+
+  .form {
     position: fixed;
     z-index: 100;
     top: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  main {
+    padding: 30px 0 0 0;
+    overflow: hidden;
+  }
+
+  .mobile {
+    display: flex !important;
+  }
+
+  .background-block {
+    padding: 0 25px;
+  }
+
+  .background-block:first-child {
+    background: none !important;
+  }
+
+  .title-block h1 {
+    max-width: 40%;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    width: auto;
+  }
+
+  .title-block > .title {
+    margin: 30px 0 0 0;
+  }
+
+  .btn-block button:not(.mobile) {
+    display: none;
+  }
+
+  .btn-block > button.mobile {
+    max-width: 200px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .btn-arrow {
+    display: none;
+  }
+
+  .portrait-title {
+    width: 100%;
+    position: absolute;
+    left: 25%;
+    z-index: -1;
+    top: -10%;
+    margin: 0;
+  }
+
+  .background-block:first-child > .content {
+    width: 100%;
+    /*overflow-x: hidden;*/
+    padding-bottom: 100px;
+  }
+
+  .training {
+    padding-top: 90px;
+  }
+
+  .training > .title-training > p:first-child {
+    color: #A3A3A3;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .training > .title-training > h1 {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .cards-discipline {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 40px 0 0 0;
   }
 }
 </style>
@@ -801,7 +914,8 @@ h1 {
   /*-o-filter: grayscale(1);*/
   filter: grayscale(100%);
 }
-.ymaps-2-1-79-inner-panes{
+
+.ymaps-2-1-79-inner-panes {
   mix-blend-mode: difference;
 }
 

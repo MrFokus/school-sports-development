@@ -79,8 +79,7 @@ h3{
   width: 100%;
   padding: 21px 0;
   background: none;
-  outline: #EDB406 2px solid;
-  border: 0;
+  border: #EDB406 2px solid;
   color: white;
   font-size: 12px;
   font-weight: 600;
@@ -93,7 +92,7 @@ h3{
   transition: background-color 0s;
   background: #c79600;
 }
-@media (max-width: 1449px) {
+@media (max-width: 1439px) and (min-width: 426px) {
 
   .card{
     min-height:14.58vw;
@@ -115,6 +114,26 @@ h3{
     margin-top: 2.8vw;
     padding: 1.5vw 0;
     font-size: 0.8vw;
+  }
+}
+@media (max-width: 425px) {
+
+  h3{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .age{
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .price{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 30%;
+  }
+  .sign-up-training{
+    margin: 10px 0 0 0;
   }
 }
 </style>

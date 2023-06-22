@@ -48,7 +48,7 @@ footer .content p{
 .messengers img:last-child{
   margin-left: 28px;
 }
-@media (max-width: 1439px) {
+@media (max-width: 1439px) and (min-width:426px) {
   footer{
     padding: 3.4vw 0;
     margin-top: 4.2vw;

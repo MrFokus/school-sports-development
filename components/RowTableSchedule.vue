@@ -182,7 +182,7 @@ h1, h3 {
 .container{
   position: relative;
 }
-@media (max-width: 1439px) {
+@media (max-width: 1439px) and (min-width:426px) {
   .row {
     flex-direction: column;
   }

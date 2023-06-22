@@ -25,4 +25,10 @@ export default {
   top: 0;
   z-index: 999;
 }
+/*@media (max-width: 425px) {*/
+/*  .default{*/
+/*    overflow-x: hidden;*/
+/*  }*/
+
+/*}*/
 </style>

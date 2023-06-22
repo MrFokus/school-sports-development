@@ -50,7 +50,7 @@ export const state = () => ({
       },
       teachers: [
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A3650%20%D0%BB.jpg",
+          img: "/coaches/Kyzym-Evgeniy.png",
           name: "Кызым Евгений Васильевич ",
           description: "Мастер спорта <br>" +
             "Обладатель черного пояса по каратэ<br>" +
@@ -59,7 +59,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A3823%20%D0%BB23.jpg",
+          img: "/coaches/Kyzym-Igor.png",
           name: "Кызым Игорь Васильевич ",
           description: "Мастер спорта <br>" +
             "Обладатель черного пояса по каратэ <br>" +
@@ -68,7 +68,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A6974%20%D0%BB.jpg",
+          img: "/coaches/Buneev-Maxim.png",
           name: "Бунеев Максим Николаевич ",
           description: "Мастер спорта<br>" +
             "Обладатель черного пояса по каратэ<br>" +
@@ -77,7 +77,7 @@ export const state = () => ({
             "по каратэ в разделе КАТА"
         },
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A3742%20%D0%BB23.jpg",
+          img: "/coaches/Kyzym-German.png",
           name: "Кызым Герман Игоревич",
           description: "Кандидат в мастера спорта <br>" +
             "Обладатель черного пояса по каратэ. <br>" +
@@ -123,7 +123,7 @@ export const state = () => ({
       },
       teachers: [
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A3650%20%D0%BB.jpg",
+          img: "/coaches/Kyzym-Evgeniy.png",
           name: "Кызым Евгений Васильевич ",
           description: "Мастер спорта <br>" +
             "Обладатель черного пояса по каратэ<br>" +
@@ -132,7 +132,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A3719%20%D0%BB.jpg",
+          img: "/coaches/Mamedov-Rauf.png",
           name: "Мамедов Рауф Фахрадович ",
           description: "Мастер спорта. <br>" +
             "Победитель первенства Мира по кикбоксингу. <br>" +
@@ -178,7 +178,7 @@ export const state = () => ({
       },
       teachers: [
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A3650%20%D0%BB.jpg",
+          img: "/coaches/Kyzym-Evgeniy.png",
           name: "Кызым Евгений Васильевич ",
           description: "Мастер спорта <br>" +
             "Обладатель черного пояса по каратэ<br>" +
@@ -187,7 +187,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
-          img: "https://thumb.cloud.mail.ru/weblink/thumb/xw1/kFMV/koLxcaM2s/8N1A3823%20%D0%BB23.jpg",
+          img: "/coaches/Kyzym-Igor.png",
           name: "Кызым Игорь Васильевич ",
           description: "Мастер спорта <br>" +
             "Обладатель черного пояса по каратэ <br>" +

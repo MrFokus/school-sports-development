@@ -145,7 +145,7 @@ h2{
   font-weight: 300;
   line-height: 40px;
 }
-@media (max-width: 1439px) {
+@media (max-width: 1439px) and (min-width:426px) {
   .info-component{
     width: 100%;
     padding: 0 5.5vw;
