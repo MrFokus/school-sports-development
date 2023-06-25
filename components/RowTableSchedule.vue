@@ -244,8 +244,8 @@ h1, h3 {
     padding: 10px 20px;
     grid-template-columns: none;
     grid-template-areas:
-      "H H H"
-      "D T A";
+      "H H H H H H H H"
+      "D D T T T A A A ";
     border-bottom: #EDB406 0.5px solid;
   }
 
@@ -264,7 +264,9 @@ h1, h3 {
   .teacher > .times {
     grid-area: T;
   }
-
+  .time{
+    justify-content: flex-start;
+  }
   .teacher > .addresses {
     grid-area: A;
   }
