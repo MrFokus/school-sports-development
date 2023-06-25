@@ -6,7 +6,7 @@
       </div>
       <div class="logo">
         <nuxt-link to="/"><img src="~/assets/img/Logo.svg" alt=""></nuxt-link>
-        <nuxt-link class="mobile" to="/"><img src="~/assets/img/mobile-logo.png" alt=""></nuxt-link>
+        <nuxt-link class="mobile" to="/"><img src="~/assets/img/mobile-logo.svg" alt=""></nuxt-link>
       </div>
       <div class="container-menu">
         <div @click="menuActive=!menuActive" :class="['burger-menu',{'menu-active':menuActive}]">
@@ -31,7 +31,24 @@ export default {
   },
   components: {
     Menu,
-  }
+  },
+  methods:{
+    handleScroll(){
+      if(window.innerWidth <=425){
+        console.log(window.scrollY)
+        if (window.scrollY>10){
+          this.$refs.Header.style.backgroundColor='#181818'
+        }
+        else {
+          this.$refs.Header.style.background='none'
+        }
+      }
+    }
+  },
+
+  mounted() {
+      window.addEventListener('scroll', this.handleScroll);
+  },
 }
 </script>
 
@@ -158,6 +175,7 @@ div {
   header {
     width: 100%;
     padding: 0 4.9vw;
+    background-color: #EDB406;
   }
 
   .container {

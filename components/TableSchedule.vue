@@ -40,4 +40,12 @@ export default {
   border-right: #EDB406 2px solid;
   border-left: #EDB406 2px solid;
 }
+@media (max-width: 425px) {
+  .table-schedule{
+    border-top: #EDB406 0.5px solid;
+    border-bottom: #EDB406 0.5px solid;
+    border-right:none;
+    border-left: none;
+  }
+}
 </style>

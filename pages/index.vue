@@ -830,6 +830,10 @@ h1 {
 
   .background-block {
     padding: 0 25px;
+
+  }
+  .background-block:nth-child(3){
+    background-size: 260% !important;
   }
 
   .background-block:first-child {
@@ -904,6 +908,20 @@ h1 {
     flex-direction: column;
     row-gap: 30px;
     margin: 40px 0 0 0;
+  }
+  .title-schedule{
+    margin-bottom: 40px;
+    justify-content: flex-start;
+  }
+  .title-schedule > h1{
+    font-size: 20px;
+  }
+  .title-schedule > button{
+    display: none;
+  }
+  .schedule{
+    width: 100vw;
+    margin: 0 -25px;
   }
 }
 </style>
