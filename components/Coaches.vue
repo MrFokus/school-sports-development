@@ -90,4 +90,28 @@ export default {
     margin-top: 1.4vw;
   }
 }
+@media (max-width: 425px) {
+  .coaches{
+    width: 100vw;
+    margin-left: -25px;
+  }
+  .name{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .discipline{
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  .coach{
+    margin-right: 10px;
+  }
+  .coach >img{
+    width: 50vw;
+  }
+  .coach:first-child{
+    margin-left: 25px;
+  }
+}
 </style>

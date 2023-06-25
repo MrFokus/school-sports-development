@@ -55,7 +55,6 @@ export default {
             this.error = ''
           },5000)
         } else {
-          // let res = await this.$axios.get('http://localhost:3001/');
           let res = await this.$axios.post('http://195.133.199.163:3001/', {
             mail: this.mail,
             phone: this.mail,
@@ -72,13 +71,6 @@ export default {
       }
     }
   },
-  mounted() {
-    // window.addEventListener('resize',()=>{
-    //   if(window.innerWidth<1440){
-    //
-    //   }
-    // })
-  }
 }
 </script>
 
@@ -203,6 +195,25 @@ h2{
   .error{
     font-size: 1.3vw;
     margin:0 0 1.4vw 0;
+  }
+}
+@media (max-width: 425px) {
+  .content{
+    width: 80vw;
+    max-width: none;
+  }
+  .title>h2{
+    font-size: 20px;
+  }
+  .content > div p,.error{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .description{
+    font-size: 12px !important;
+  }
+  .content > div > input,.content > div > textarea{
+    border-radius: 0;
   }
 }
 </style>

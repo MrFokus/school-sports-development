@@ -74,7 +74,7 @@ header {
 .out-space {
   position: fixed;
   width: 100vw;
-  height: 200vh;
+  height: 1000vh;
 }
 
 img {

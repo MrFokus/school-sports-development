@@ -17,8 +17,13 @@ export default {
   },
   methods:{
     WidthWindow(){
-      this.width=window.innerWidth*(640/1440);
-      this.height=window.innerWidth*(360/1440);
+      if(window.innerWidth<=425){
+        this.width=0.9*window.innerWidth;
+        this.height=this.width*0.5625;
+      }else {
+        this.width = window.innerWidth * (640 / 1440);
+        this.height = window.innerWidth * (360 / 1440);
+      }
     }
   },
   mounted() {
@@ -39,5 +44,18 @@ export default {
   aspect-ratio: 16/9;
   margin-right: 40px;
   border: #EDB406 1px solid;
+}
+@media (max-width: 425px) {
+  .gallery{
+    width: 100vw;
+    max-height: none;
+    margin-left: -25px;
+  }
+  .video:first-child{
+    margin-left: 25px;
+  }
+  .video{
+    margin-right: 20px;
+  }
 }
 </style>

@@ -923,6 +923,52 @@ h1 {
     width: 100vw;
     margin: 0 -25px;
   }
+  .block-gallery>h1{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .block-gallery>p{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  .coaches-block{
+    flex-direction: column;
+    padding-top: 80px;
+    align-items: flex-start;
+  }
+  .coaches-block>.title>h1{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .coaches-block>.title>p{
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  .contacts{
+    flex-direction: column;
+  }
+  .contacts-info{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contacts > .title > h1{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .contacts-info>div{
+    margin-bottom: 30px;
+  }
+  .contacts-info > div > p{
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 </style>
 <style>
