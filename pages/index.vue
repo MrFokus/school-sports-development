@@ -843,7 +843,7 @@ h1 {
   .title-block h1 {
     max-width: 40%;
     color: #FFF;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     text-transform: uppercase;
     position: relative;
@@ -862,8 +862,9 @@ h1 {
     max-width: 200px;
     color: #FFF;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
+    padding: 8px 14px;
   }
 
   .btn-arrow {
@@ -891,14 +892,14 @@ h1 {
 
   .training > .title-training > p:first-child {
     color: #A3A3A3;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
   }
 
   .training > .title-training > h1 {
     color: #FFF;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     text-transform: uppercase;
   }
@@ -914,7 +915,7 @@ h1 {
     justify-content: flex-start;
   }
   .title-schedule > h1{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
   }
   .title-schedule > button{
@@ -925,12 +926,12 @@ h1 {
     margin: 0 -25px;
   }
   .block-gallery>h1{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
   }
   .block-gallery>p{
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     margin: 0;
     margin-bottom: 4px;
@@ -941,12 +942,12 @@ h1 {
     align-items: flex-start;
   }
   .coaches-block>.title>h1{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
   }
   .coaches-block>.title>p{
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     margin: 0;
     margin-bottom: 4px;
@@ -960,7 +961,7 @@ h1 {
     flex-direction: column;
   }
   .contacts > .title > h1{
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
   }
   .contacts-info>div{
