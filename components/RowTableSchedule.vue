@@ -241,8 +241,9 @@ h1, h3 {
 
 @media (max-width: 425px) {
   .teacher {
-    padding: 10px 20px;
-    grid-template-columns: none;
+    padding: 20px 20px;
+    /*grid-template-columns: none;*/
+    grid-template-columns:40px 40px 2fr 3fr;
     grid-template-areas:
       "H H H H H H H H"
       "D D T T T A A A ";
@@ -252,13 +253,16 @@ h1, h3 {
   .teacher > h3 {
     width: 100%;
     font-size: 18px;
-    justify-content: center;
+    /*justify-content: center;*/
     grid-area: H;
     margin-bottom: 10px;
   }
 
   .teacher > .days {
     grid-area: D;
+    /*min-width: 60px;*/
+    /*max-width: 60px;*/
+
   }
 
   .teacher > .times {
@@ -301,6 +305,5 @@ h1, h3 {
   .active >h3{
     color: white;
   }
-
 }
 </style>

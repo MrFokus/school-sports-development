@@ -67,4 +67,21 @@ footer .content p{
     width: 2vw;
   }
 }
+@media (max-width: 425px) {
+  .info{
+    padding: 0 24px;
+  }
+  footer{
+    padding:40px 25px;
+    width: 100vw;
+    margin-top: 20px;
+  }
+  .content .phone{
+    font-size: 14px;
+  }
+  .messengers a>img{
+    width: 40px;
+    margin-left: 16px !important;
+  }
+}
 </style>

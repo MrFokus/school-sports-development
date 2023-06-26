@@ -35,19 +35,22 @@ export default {
   methods:{
     handleScroll(){
       if(window.innerWidth <=425){
-        console.log(window.scrollY)
-        if (window.scrollY>10){
+        if (window.scrollY>10 && this.$refs.Header.style){
           this.$refs.Header.style.backgroundColor='#181818'
         }
         else {
           this.$refs.Header.style.background='none'
         }
       }
+      else{
+        this.$refs.Header.style.backgroundColor='#EDB406'
+      }
     }
   },
 
   mounted() {
       window.addEventListener('scroll', this.handleScroll);
+      window.addEventListener('resize',this.handleScroll)
   },
 }
 </script>

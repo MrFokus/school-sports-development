@@ -204,4 +204,63 @@ h2{
     line-height: 2.7vw;
   }
 }
+
+@media (max-width: 425px) {
+
+  .name-page{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .description >p{
+    font-size: 18px;
+  }
+  .include-list >h2{
+    font-size: 20px;
+  }
+  .include-list ul>li{
+    font-size: 18px;
+  }
+  h1{
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .gallery{
+    width: 100vw;
+    margin: 0 -25px;
+  }
+  .gallery>img:first-child{
+    margin-left: 25px;
+  }
+  .gallery>img{
+    margin-right: 10px;
+    width: 85%;
+  }
+  .teacher{
+    padding: 20px 0;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .teacher>img{
+    width: 100%;
+  }
+  .teacher>.description{
+    margin: 0;
+    margin-top: 20px;
+  }
+  .teacher .name{
+    font-size: 20px;
+  }
+  .teacher > .description p{
+    font-size: 18px;
+  }
+  .teacher:nth-child(2n+1) .description{
+    order: unset;
+    margin-top: 20px;
+  }
+  .teacher[data-v-e25200ee]:last-child{
+    padding: 20px 0;
+  }
+}
 </style>
