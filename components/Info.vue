@@ -259,7 +259,7 @@ h2{
     order: unset;
     margin-top: 20px;
   }
-  .teacher[data-v-e25200ee]:last-child{
+  .teacher:last-child{
     padding: 20px 0;
   }
 }
