@@ -915,6 +915,7 @@ h1 {
   }
   .title-schedule > h1{
     font-size: 20px;
+    font-weight: 600;
   }
   .title-schedule > button{
     display: none;
