@@ -12,7 +12,7 @@ export default {
     return{
       width:0,
       height:0,
-      source:['https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2']
+      source:['https://vk.com/video_ext.php?oid=-187206619&id=456239027&hash=10cdf71a2cab19a3&hd=2','https://vk.com/video_ext.php?oid=-187206619&id=456239020&hash=7b89e6f41345b686&hd=3','https://vk.com/video_ext.php?oid=-187206619&id=456239023&hash=22ef103f6d90dabc&hd=1','https://vk.com/video_ext.php?oid=-187206619&id=456239031&hash=a89e69b8786fdb3d&hd=2']
     }
   },
   methods:{
