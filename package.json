@@ -6,7 +6,7 @@
     "dev:host": "nuxt --hostname '0.0.0.0' --port 3000",
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start --hostname '0.0.0.0' --port 3000",
+    "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
