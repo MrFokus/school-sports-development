@@ -3,7 +3,7 @@
     <Info :discipline="$store.getters['discipline/active'][$route.params.name]"/>
     <footer>
       <div class="content">
-        <p class="phone">+7 (888) 888-88-88</p>
+        <p class="phone">8 (980) 355-66-60</p>
         <div class="messengers">
           <a href="https://t.me/karatelipetsk"><img src="@/assets/img/telegram-icon.svg" alt=""></a>
           <a href="https://vk.com/kickboxinglipetsk"><img src="@/assets/img/vk-icon.svg" alt=""></a>

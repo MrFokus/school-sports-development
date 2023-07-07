@@ -2,7 +2,7 @@
   <header ref="Header">
     <div class="container">
       <div class="call">
-        <p>+7(495) 921 9300</p>
+        <p>8 (980) 355-66-60</p>
       </div>
       <div class="logo">
         <nuxt-link to="/"><img src="~/assets/img/Logo.svg" alt=""></nuxt-link>

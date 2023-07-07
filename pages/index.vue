@@ -66,11 +66,11 @@
         <div class="contacts-info">
           <div class="mail">
             <img src="@/assets/img/mail-icon.svg" alt="">
-            <p>example@mail.ru</p>
+            <p>cyzym@yandex.ru</p>
           </div>
           <div class="phone">
             <img src="@/assets/img/smartphone-icon.svg" alt="">
-            <p>+7 (888) 888-88-88</p>
+            <p>8 (980) 355-66-60</p>
           </div>
           <div class="address">
             <img src="@/assets/img/map-point-icon.svg" alt="">
