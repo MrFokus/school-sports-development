@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'school-sports-development',
+    title: 'Школа спортивного развития им. В.Н. Кызым – Секции Карате и Кикбоксинга',
     htmlAttrs: {
       lang: 'en'
     },
