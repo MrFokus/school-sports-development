@@ -102,15 +102,27 @@ import Coaches from "@/components/Coaches";
 import ModalForm from "@/components/ModalForm";
 
 export default {
+  head:{
+    title:"Школа спортивного развития им. В.Н. Кызым – Секции Карате и Кикбоксинга",
+    meta:[
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Школа спортивного развития им. В.Н. Кызым проводит как групповые, так и индивидуальные тренировки по карате и кикбоксингу под наставничеством опытных и дипломированных тренеров'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'Школа спортивного развития им. В.Н. Кызым, секция, тренировки, занятия, карате, кикбоксинг, тренировки для детей, липецк, развитие, духовность'
+      },
+    ],
+  },
   components: {
     CardDiscipline,
     TableSchedule,
     Gallery,
     Coaches,
     ModalForm,
-  },
-  mounted() {
-    console.log(this.$store.getters["modal/active"])
   },
   data() {
     return {
