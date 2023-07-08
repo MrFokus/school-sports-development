@@ -83,6 +83,7 @@ export default {
 .frame{
   width: 100%;
   object-fit: cover;
+  aspect-ratio: 16/9;
 }
 @media (max-width: 425px) {
   .gallery{
