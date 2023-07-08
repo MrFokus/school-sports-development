@@ -9,6 +9,7 @@ export default {
       lang: 'en'
     },
     meta: [
+      {'http-equiv':"Content-Security-Policy", content:"upgrade-insecure-requests"},
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name:"yandex-verification", content:"c0bbdba8d1761292"},
