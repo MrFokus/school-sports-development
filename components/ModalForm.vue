@@ -55,7 +55,7 @@ export default {
             this.error = ''
           },5000)
         } else {
-          fetch("http://example.com/api/endpoint/", {
+          fetch("http://45.8.97.97:3001/", {
             method: "post",
             headers: {
               'Accept': 'application/json',
