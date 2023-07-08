@@ -55,11 +55,26 @@ export default {
             this.error = ''
           },5000)
         } else {
-          let res = await this.$axios.post('http://45.8.97.97:3001/', {
-            mail: this.mail,
-            phone: this.mail,
-            comment: this.comment
+          fetch("http://example.com/api/endpoint/", {
+            method: "post",
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              mail: this.mail,
+              phone: this.mail,
+              comment: this.comment
+            })
           })
+            .then( (response) => {
+              //do something awesome that makes the world a better place
+            });
+          // let res = await this.$axios.post('http://45.8.97.97:3001/', {
+          //   mail: this.mail,
+          //   phone: this.mail,
+          //   comment: this.comment
+          // })
           this.closeModal()
         }
       }
