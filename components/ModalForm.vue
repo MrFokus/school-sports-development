@@ -57,7 +57,7 @@ export default {
         } else {
           let res = await this.$axios.post('https://school-kyzym.ru:8877/', {
             mail: this.mail,
-            phone: this.mail,
+            phone: this.phone,
             comment: this.comment
           })
           this.closeModal()
