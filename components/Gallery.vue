@@ -82,6 +82,7 @@ export default {
   }
   .video{
     margin-right: 20px;
+    object-fit: contain;
   }
 }
 </style>
