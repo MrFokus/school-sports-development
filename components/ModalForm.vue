@@ -55,7 +55,7 @@ export default {
             this.error = ''
           },5000)
         } else {
-          let res = await this.$axios.post('http://school-kyzym.ru:8877/', {
+          let res = await this.$axios.post('https://school-kyzym.ru:8877/', {
             mail: this.mail,
             phone: this.mail,
             comment: this.comment
