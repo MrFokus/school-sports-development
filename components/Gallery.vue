@@ -1,8 +1,10 @@
 <template>
   <div class="gallery">
-    <div v-for="s in source" class="video">
-<!--      <iframe v-if="s.type==='video'" class="frame" :src="s.src" :width="width" :height="height" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>-->
-      <img class="frame" :style="`width:${width}px; object-fit:cover;`" v-else :src="s.src" alt="">
+    <div v-if="s.type==='img'" v-for="s in source" class="content">
+      <img  :src="s.src" alt="">
+    </div>
+    <div v-if="s.type==='video'" v-for="s in source" class="content">
+      <iframe :src="s.src" width="100%" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </template>
@@ -66,10 +68,16 @@ export default {
   max-width: 100%;
   overflow-x: scroll;
 }
-.video{
+.content{
+  min-width: 60vw;
+  max-width: 60vw;
   aspect-ratio: 16/9;
   margin-right: 40px;
   border: #EDB406 1px solid;
+}
+.content img{
+  width: 100%;
+  object-fit: cover;
 }
 @media (max-width: 425px) {
   .gallery{
@@ -77,10 +85,12 @@ export default {
     max-height: none;
     margin-left: -25px;
   }
-  .video:first-child{
+  .content:first-child{
     margin-left: 25px;
   }
-  .video{
+  .content{
+    min-width: 80vw;
+    max-width: 80vw;
     margin-right: 20px;
   }
 }
