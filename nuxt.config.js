@@ -12,6 +12,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name:"yandex-verification", content:"c0bbdba8d1761292"},
+      {name:"format-detection", content:"telephone=no"},
       {
         name: 'description',
         content: 'Школа спортивного развития им. В.Н. Кызым проводит как групповые, так и индивидуальные тренировки по карате и кикбоксингу под наставничеством опытных и дипломированных тренеров'
