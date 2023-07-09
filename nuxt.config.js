@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'Школа спортивного развития им. В.Н. Кызым – Секции Карате и Кикбоксинга',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },
