@@ -12,9 +12,17 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name:"yandex-verification", content:"c0bbdba8d1761292"},
+      {
+        name: 'description',
+        content: 'Школа спортивного развития им. В.Н. Кызым проводит как групповые, так и индивидуальные тренировки по карате и кикбоксингу под наставничеством опытных и дипломированных тренеров'
+      },
+      {
+        name: 'keywords',
+        content: 'Школа спортивного развития им. В.Н. Кызым, секция, тренировки, занятия, карате, кикбоксинг, тренировки для детей, липецк, развитие, духовность, кызым, школа кызым'
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/iconKarate.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 
