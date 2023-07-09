@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <div v-for="s in source" class="video">
-      <iframe v-if="s.type==='video'" class="frame" :src="s.src" :width="width" :height="height" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>
+<!--      <iframe v-if="s.type==='video'" class="frame" :src="s.src" :width="width" :height="height" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0" allowfullscreen></iframe>-->
       <img class="frame" :style="`width:${width}px; object-fit:cover;`" v-else :src="s.src" alt="">
     </div>
   </div>
