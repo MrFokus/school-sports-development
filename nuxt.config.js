@@ -25,8 +25,9 @@ export default {
       },
     ],
     link: [
+      {rel: 'icon', sizes: '36x36', type: 'image/svg+xml', href: '/favicon36.svg'},
       {rel: 'icon', sizes: '120x120', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'icon', sizes: '36x36', type: 'image/x-icon', href: '/favicon36.ico'}
+      {rel: 'icon', sizes: '36x36', type: 'image/x-icon', href: '/favicon36.ico'},
     ]
   },
 
