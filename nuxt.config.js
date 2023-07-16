@@ -10,6 +10,7 @@ export default {
     },
     meta: [
       {charset: 'utf-8'},
+      {name:"yandex-verification", content:"68b409f1c3ce78c3"},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {name: "yandex-verification", content: "c0bbdba8d1761292"},
       {name: "format-detection", content: "telephone=no"},
