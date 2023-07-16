@@ -48,7 +48,7 @@
       <div class="block-gallery">
         <p>НАШИ ТЕРНИРОВКИ</p>
         <h1>ГАЛЕРЕЯ</h1>
-        <Gallery/>
+        <Gallery :source="this.$store.getters['discipline/active']"/>
       </div>
       <div id="teachers" class="coaches-block">
         <div class="title">
@@ -108,6 +108,9 @@ export default {
     Gallery,
     Coaches,
     ModalForm,
+  },
+  created(){
+    this.$store.dispatch('discipline/getPhoto','all')
   },
   data() {
     return {

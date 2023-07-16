@@ -3,7 +3,7 @@ import {store} from "core-js/internals/reflect-metadata";
 export const state = () => ({
   discipline: {
     karate: {
-      public_key: 'x6dTM+Vkyq90Gh6SnhB0qVN7HWsP1DOjNikx08XgdeewrMkPKgSuzyqqWeYzruwLq/J6bpmRyOJonT3VoXnDag==',
+      select: 'каратэ',
       title: "ТРЕНИРОВКИ КАРАТЭ",
       paragraph: [
         {
@@ -87,7 +87,7 @@ export const state = () => ({
     },
     kickboxing: {
       title: "ТРЕНИРОВКИ КИКБОКСИНГ",
-      public_key: '0TrDrRzgKe/YJQbsAzc686uNNaN4srHJZq2arFWYprZKKZ698M6PWayJ6l1Xmj4Gq/J6bpmRyOJonT3VoXnDag==',
+      select:'кикбоксинг',
       paragraph: [
         {
           title: 'КИКБОКСИНГ',
@@ -145,7 +145,7 @@ export const state = () => ({
     },
     'child-training': {
       title: "Детские развивающие тренировки",
-      public_key: '',
+      public_key: 'дети',
       paragraph: [
         {
           title: 'Детские развивающие тренировки ',
@@ -199,7 +199,6 @@ export const state = () => ({
     },
     'school': {
       title: "О нас",
-      public_key:'doXzEst6Z9JFlByVOjirURI7SFLsPel0oxcmWRmdPVm4BTlub52bZKXV9hOw94fMq/J6bpmRyOJonT3VoXnDag==',
       paragraph: [
         {
           title: 'Добро пожаловать в школу спортивного развития имени В.Н. Кызым!',
@@ -240,8 +239,20 @@ export const state = () => ({
       ],
       gallery: {
         type: 'vertical',
-        img: [],
+        img: [
+          {src:'/school/1.png'},
+          {src:'/school/2.png'},
+          {src:'/school/3.png'},
+          {src:'/school/4.png'},
+          {src:"/school/5.png"}
+
+        ],
       },
+    },
+    all:{
+      gallery:{
+        img:[],
+      }
     }
   }
 })
@@ -255,8 +266,14 @@ export const mutations = {
 }
 export const actions = {
   async getPhoto({state, commit}, payload) {
-    let res = await this.$axios.get('https://cloud-api.yandex.net/v1/disk/public/resources', {params: {public_key: state.discipline[payload].public_key}})
-    commit('addPhoto', {name: payload, img: res.data['_embedded'].items.map(item => item.sizes[0].url)})
+    // state.discipline[payload].select
+    if (payload!=='school'){
+      let res = await  this.$axios.get ('https://school-kyzym.ru:8877/gallery',{params:{select:payload==="all"?payload: state.discipline[payload].select}})
+      commit('addPhoto', {name: payload, img: res.data.map(item => ({
+          src:item.url,
+          type:item.type,
+        }))})
+    }
   }
 }
 

@@ -15,7 +15,7 @@
     </div>
     <h1>Галерея</h1>
     <div class="gallery">
-      <img :class="discipline.gallery.type" v-for="img in discipline.gallery.img" :src="img" alt="">
+      <img :class="discipline.gallery.type" v-for="img in discipline.gallery.img" :src="img.src" alt="">
     </div>
     <div v-if="discipline.teachers" class="teachers">
       <h1>Наши тренеры</h1>
