@@ -19,7 +19,7 @@ export default {
   middleware:'route',
   components: {
     Info
-  }
+  },
 }
 </script>
 

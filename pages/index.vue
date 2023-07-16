@@ -102,6 +102,21 @@ import Coaches from "@/components/Coaches";
 import ModalForm from "@/components/ModalForm";
 
 export default {
+  head: {
+    title: 'Школа спортивного развития им. В.Н. Кызым – Секции Карате и Кикбоксинга',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Школа спортивного развития им. В.Н. Кызым проводит как групповые, так и индивидуальные тренировки по карате и кикбоксингу под наставничеством опытных и дипломированных тренеров'
+      },
+      {
+        name: 'keywords',
+        content: 'Школа спортивного развития им. В.Н. Кызым, секция, тренировки, занятия, карате, каратэ, кикбоксинг, тренировки для детей, липецк, развитие, духовность, кызым, школа кызым, перова, ката, кумитэ'
+      },
+    ],
+    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}]
+  },
   components: {
     CardDiscipline,
     TableSchedule,
@@ -109,8 +124,8 @@ export default {
     Coaches,
     ModalForm,
   },
-  created(){
-    this.$store.dispatch('discipline/getPhoto','all')
+  created() {
+    this.$store.dispatch('discipline/getPhoto', 'all')
   },
   data() {
     return {
@@ -832,7 +847,8 @@ h1 {
     padding: 0 25px;
 
   }
-  .background-block:nth-child(3){
+
+  .background-block:nth-child(3) {
     background-size: 260% !important;
   }
 
@@ -910,64 +926,78 @@ h1 {
     row-gap: 30px;
     margin: 40px 0 0 0;
   }
-  .title-schedule{
+
+  .title-schedule {
     margin-bottom: 40px;
     justify-content: flex-start;
   }
-  .title-schedule > h1{
+
+  .title-schedule > h1 {
     font-size: 24px;
     font-weight: 600;
   }
-  .title-schedule > button{
+
+  .title-schedule > button {
     display: none;
   }
-  .schedule{
+
+  .schedule {
     width: 100vw;
     margin: 0 -25px;
   }
-  .block-gallery>h1{
+
+  .block-gallery > h1 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
   }
-  .block-gallery>p{
+
+  .block-gallery > p {
     font-size: 16px;
     font-weight: 500;
     margin: 0;
     margin-bottom: 4px;
   }
-  .coaches-block{
+
+  .coaches-block {
     flex-direction: column;
     padding-top: 80px;
     align-items: flex-start;
   }
-  .coaches-block>.title>h1{
+
+  .coaches-block > .title > h1 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
   }
-  .coaches-block>.title>p{
+
+  .coaches-block > .title > p {
     font-size: 16px;
     font-weight: 500;
     margin: 0;
     margin-bottom: 4px;
   }
-  .contacts{
+
+  .contacts {
     flex-direction: column;
   }
-  .contacts-info{
+
+  .contacts-info {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
   }
-  .contacts > .title > h1{
+
+  .contacts > .title > h1 {
     font-size: 24px;
     font-weight: 600;
   }
-  .contacts-info>div{
+
+  .contacts-info > div {
     margin-bottom: 30px;
   }
-  .contacts-info > div > p{
+
+  .contacts-info > div > p {
     font-size: 16px;
     font-weight: 400;
   }

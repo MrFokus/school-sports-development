@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Школа спортивного развития им. В.Н. Кызым – Секции Карате и Кикбоксинга',
+
     htmlAttrs: {
       lang: 'ru'
     },
@@ -21,11 +21,12 @@ export default {
       },
       {
         name: 'keywords',
-        content: 'Школа спортивного развития им. В.Н. Кызым,секция,тренировки,занятия,карате,каратэ,кикбоксинг,тренировки для детей,липецк,развитие,духовность,кызым,школа кызым'
+        content: 'Школа спортивного развития им. В.Н. Кызым, секция, тренировки, занятия, карате, каратэ, кикбоксинг, тренировки для детей, липецк, развитие, духовность, кызым, школа кызым, перова, ката, кумитэ'
       },
     ],
     link: [
-      {rel: 'icon', sizes: '120x120', type: 'image/x-icon', href: '/favicon.ico'}
+      {rel: 'icon', sizes: '120x120', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'icon', sizes: '36x36', type: 'image/x-icon', href: '/favicon36.ico'}
     ]
   },
 
