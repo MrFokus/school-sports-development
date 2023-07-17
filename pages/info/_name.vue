@@ -16,10 +16,17 @@
 <script>
 import Info from "@/components/Info"
 export default {
+  head:{},
   middleware:'route',
   components: {
     Info
   },
+  async asyncData(ctx){
+    console.log(ctx)
+    await console.log(ctx.store.getters['discipline/active'][ctx.route.params.name])
+    ctx.head = ctx.store.getters['discipline/active'][ctx.route.params.name].head
+    console.log(ctx.head)
+  }
 }
 </script>
 
