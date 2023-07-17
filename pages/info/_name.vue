@@ -16,17 +16,20 @@
 <script>
 import Info from "@/components/Info"
 export default {
-  head:{},
+  // head:{
+  //   title:"",
+  // },
   middleware:'route',
   components: {
     Info
   },
-  async asyncData(ctx){
-    console.log(ctx)
-    await console.log(ctx.store.getters['discipline/active'][ctx.route.params.name])
-    ctx.head = ctx.store.getters['discipline/active'][ctx.route.params.name].head
-    console.log(ctx.head)
-  }
+  //  createdreate(){
+  //   console.log()
+  //    console.log(this.$store.getters['discipline/active'][this.$route.params.name])
+  //    this.$set(this.$data, 'head', this.$store.getters['discipline/active'][this.$route.params.name].head)
+  //   // this.head = this.$store.getters['discipline/active'][this.$route.params.name].head
+  //   console.log(this.head)
+  // },
 }
 </script>
 
