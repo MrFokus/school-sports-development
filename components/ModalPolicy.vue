@@ -9,7 +9,7 @@
   export default {
     data(){
       return{
-        visibleModal:true,
+        visibleModal:false,
       }
     },
     mounted() {
@@ -27,6 +27,7 @@
           let cookie_date = new Date();
           document.cookie = `policyAcceptDate=${cookie_date.getTime()};max-age=2629743;domain=school-kyzym.ru;path=/`;
         },5000)
+        this.visibleModal = true
       }
     }
   }
