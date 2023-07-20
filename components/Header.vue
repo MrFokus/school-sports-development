@@ -154,14 +154,14 @@ div {
 .menu-active .burger-component:first-child {
   transform: rotate(45deg) scale(1.2);
   transform-origin: center center;
-  top: 35%;
+  top: 40%;
   right: 0;
 }
 
 .menu-active .burger-component:last-child {
   transform-origin: center center;
   transform: rotate(-45deg) scale(1.2);
-  bottom: 35%;
+  bottom: 40%;
   margin: 0;
   right: 0;
 }

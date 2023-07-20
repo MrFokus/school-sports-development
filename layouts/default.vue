@@ -2,14 +2,20 @@
   <div class="default">
     <Header  class="header"/>
     <Nuxt />
+    <Footer/>
+    <ModalPolicy/>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+import ModalPolicy from "@/components/ModalPolicy";
 export default {
   components:{
     Header,
+    Footer,
+    ModalPolicy,
   },
 }
 </script>

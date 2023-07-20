@@ -19,8 +19,14 @@
         <p class="description">Напишите ваши пожелания (дата, время, тренер, дисциплина, возраст учащегося)</p>
         <textarea v-model="comment"></textarea>
       </div>
-      <p v-if="error" class="error">{{error}}</p>
-      <button @click="sendForm" class="send">Отправить</button>
+      <p v-if="error" class="error">{{ error }}</p>
+      <label class="check-policy" for="policy"> <input id="policy" @click="policy=!policy" type="checkbox">
+        <p> Даю
+          <nuxt-link to="/consent-personal-data">согласие</nuxt-link>
+          на обработку своих персональных данных
+        </p>
+      </label>
+      <button @click="sendForm" :class="['send',!policy? 'disabled':'']">Отправить</button>
     </div>
   </div>
 </template>
@@ -30,44 +36,51 @@ export default {
   data() {
     return {
       widthForm: 650,
-      mail:"",
-      phone:"",
-      comment:"",
-      response:{},
-      error:'',
+      mail: "",
+      phone: "",
+      comment: "",
+      response: {},
+      error: '',
+      policy: false,
     }
   },
   methods: {
     closeModal() {
       this.$emit('closeModal')
     },
-    async sendForm(){
-      if(this.mail && this.phone && this.comment){
-        if(!/\S+@\S+\.\S+/.test(this.mail)){
+    async sendForm() {
+      if (this.mail && this.phone && this.comment) {
+        if (!/\S+@\S+\.\S+/.test(this.mail)) {
           this.error = "Неверный почтовый адрес"
-          setTimeout(()=>{
+          setTimeout(() => {
             this.error = ''
-          },5000)
-        }
-        else if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(this.phone)){
+          }, 5000)
+        } else if (!/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(this.phone)) {
           this.error = "Неверный номер телефона"
-          setTimeout(()=>{
+          setTimeout(() => {
             this.error = ''
-          },5000)
-        } else {
+          }, 5000)
+        } else if (this.policy) {
           let res = await this.$axios.post('https://school-kyzym.ru:8877/', {
             mail: this.mail,
             phone: this.phone,
-            comment: this.comment
+            comment: this.comment,
+            policy: this.policy,
           })
-          this.closeModal()
+          if (!res.data.error) {
+            this.closeModal()
+          } else {
+            this.error = res.data.error
+            setTimeout(() => {
+              this.error = ''
+            }, 5000)
+          }
         }
-      }
-      else{
+      } else {
         this.error = "Все поля должны быть заполнены!"
-        setTimeout(()=>{
+        setTimeout(() => {
           this.error = ''
-        },5000)
+        }, 5000)
       }
     }
   },
@@ -99,120 +112,171 @@ export default {
   flex-direction: column;
   background: #131313;
 }
-.content > div{
+
+.content > div {
   width: 100%;
   flex-direction: column;
   margin-bottom: 20px;
 }
-h2{
+
+h2 {
   color: white;
 }
-.content > div >input{
+
+.content > div > input {
   padding: 4px 8px;
   outline: none;
   border: none;
+  font-size: 18px;
 }
-.content > div >input:focus{
+
+.content > div > input:focus {
   border-radius: 0;
   outline: #EDB406 1px solid;
 }
-.content>div>p{
+
+.content > div > p {
   color: white;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
-.comment> textarea{
+
+.comment > textarea {
   resize: none;
   padding: 4px 8px;
   min-height: 100px;
+  font-size: 18px;
 }
-.comment > .description{
+
+.comment > .description {
   font-size: 14px;
   font-weight: 400;
   color: #A3A3A3;
 }
-.send{
+
+.send {
   background: #EDB406;
   color: white;
   border: none;
   padding: 10px 0;
   font-weight: 800;
 }
-.send:hover{
+
+.send.disabled {
+  background-color: #A3A3A3;
+}
+
+.send:not(.disabled):hover {
   background: #dfa900;
 }
-.send:active{
+
+.send:not(.disabled):active {
   background: #c79600;
 }
-.title{
+
+.title {
   flex-direction: row !important;
-  justify-content: space-between ;
+  justify-content: space-between;
 }
-.title>img{
+
+.title > img {
   max-width: 35px;
   padding: 8px;
   cursor: pointer;
 }
-.error{
+
+.error {
   color: red;
   font-size: 16px;
   font-weight: 800;
-  margin:0 0 20px 0;
+  margin: 0 0 20px 0;
 }
-@media (max-width: 1439px) and (min-width:426px) {
-  h2{
+
+.check-policy {
+  color: white;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.check-policy a {
+  text-decoration: #EDB406 underline;
+  color: #EDB406;
+}
+
+.check-policy #policy {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+@media (max-width: 1439px) and (min-width: 426px) {
+  h2 {
     font-size: 2vw;
   }
+
   .content {
     padding: 0.7vw 1.7vw 1.7vw 1.7vw;
   }
-  .content > div{
+
+  .content > div {
     margin-bottom: 1.4vw;
   }
-  .content>div input,.content>div textarea{
+
+  .content > div input, .content > div textarea {
     font-size: 1.4vw;
   }
-  .content>div>p{
+
+  .content > div > p {
     font-size: 1.25vw;
     margin-bottom: 0.4vw;
   }
-  .comment> textarea{
+
+  .comment > textarea {
     padding: 4px 8px;
     min-height: 7vw;
   }
-  .comment > .description{
+
+  .comment > .description {
     font-size: 1vw;
   }
-  .send{
+
+  .send {
     padding: 0.7vw 0;
   }
 
-  .title>img{
+  .title > img {
     max-width: 2.4vw;
     padding: 0.7vw;
   }
-  .error{
+
+  .error {
     font-size: 1.3vw;
-    margin:0 0 1.4vw 0;
+    margin: 0 0 1.4vw 0;
   }
 }
+
 @media (max-width: 425px) {
-  .content{
+  .content {
     width: 80vw;
     max-width: none;
   }
-  .title>h2{
+
+  .title > h2 {
     font-size: 20px;
   }
-  .content > div p,.error{
+
+  .content > div p, .error {
     font-size: 16px;
     font-weight: 500;
   }
-  .description{
+
+  .description {
     font-size: 12px !important;
   }
-  .content > div > input,.content > div > textarea{
+
+  .content > div > input, .content > div > textarea {
     border-radius: 0;
   }
 }
