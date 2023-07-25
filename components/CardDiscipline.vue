@@ -3,7 +3,7 @@
     <div :style="{background: `url('${require(`~/assets/img/${card.img}`)}')`}" class="card">
       <div class="blackout"/>
       <div class="content">
-        <h3>{{ card.title }}</h3>
+        <span class="strong">{{ card.title }}</span>
         <p class="age">от {{ card.age }} лет</p>
         <button @click="$store.commit('modal/setModalActive',true)" class="price">от {{card.price}} ₽</button>
       </div>
@@ -50,7 +50,7 @@ export default {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.6);
 }
-h3{
+.strong{
   font-size: 20px;
   font-weight: 600;
 }
@@ -98,7 +98,7 @@ h3{
     min-height:14.58vw;
   }
 
-  h3{
+  .strong{
     font-size:1.4vw;
   }
   .age{
@@ -118,7 +118,7 @@ h3{
 }
 @media (max-width: 425px) {
 
-  h3{
+  .strong{
     font-size: 16px;
     font-weight: 600;
   }

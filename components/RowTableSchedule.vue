@@ -1,12 +1,12 @@
 <template>
   <div class="row">
     <div @click="OpenSchedule" :class="`btn-show-all-schedule ${active}`">
-      <h1>{{ row.discipline }}</h1>
-      <h3>{{ row.group }}</h3>
+      <span class="strong">{{ row.discipline }}</span>
+      <span class="medium-strong">{{ row.group }}</span>
     </div>
     <div :style="`max-height:${maxHeight}px`" ref="allSchedule" :class="`all-schedule`">
       <div v-for="teacher of row.teacher" class="teacher">
-        <h3>{{ teacher.name }}</h3>
+        <span class="medium-strong">{{ teacher.name }}</span>
         <div class="days">
           <p class="day" v-for="day of teacher.days">
             {{ day.day }}
@@ -73,8 +73,16 @@ export default {
   flex-direction: column;
 }
 
-h1, h3 {
+h1, h3, .strong, .medium-strong {
   color: white;
+}
+h1 ,.strong{
+  font-size: 24px;
+  font-weight: bold;
+}
+.h3 , .medium-strong{
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .btn-show-all-schedule {
@@ -135,7 +143,7 @@ h1, h3 {
   font-size: 20px;
 }
 
-.teacher h3 {
+.teacher h3, .teacher .medium-strong {
   font-size: 28px;
   font-weight: 600;
   display: flex;
@@ -200,11 +208,11 @@ h1, h3 {
     flex-direction: column;
   }
 
-  h1 {
+  h1,.strong {
     font-size: 2.5vw;
   }
 
-  h3 {
+  h3, .medium-strong {
     font-size: 1.7vw;
   }
 
@@ -229,7 +237,7 @@ h1, h3 {
     font-size: 1.39vw;
   }
 
-  .teacher h3 {
+  .teacher h3, .teacher .medium-strong {
     font-size: 2vw;
   }
 
@@ -250,7 +258,7 @@ h1, h3 {
     border-bottom: #EDB406 0.5px solid;
   }
 
-  .teacher > h3 {
+  .teacher > h3 , .teacher> .medium-strong {
     width: 100%;
     font-size: 18px;
     /*justify-content: center;*/
@@ -291,18 +299,18 @@ h1, h3 {
     font-size: 12px;
   }
 
-  .btn-show-all-schedule > h1 {
+  .btn-show-all-schedule > h1,.btn-show-all-schedule >.strong {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
   }
 
-  .btn-show-all-schedule > h3 {
+  .btn-show-all-schedule > h3 , .btn-show-all-schedule > .medium-strong {
     font-size: 12px;
     font-weight: 500;
     color: #A3A3A3;
   }
-  .active >h3{
+  .active >h3 , .active > .medium-strong{
     color: white;
   }
 }

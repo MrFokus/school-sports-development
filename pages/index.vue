@@ -24,7 +24,7 @@
       <div class="training">
         <div class="title-training">
           <p>НАШИ</p>
-          <h1>ТРЕНИРОВКИ</h1>
+          <span class="strong">ТРЕНИРОВКИ</span>
         </div>
         <div class="cards-discipline">
           <card-discipline :card="card" :key="index" v-for="(card,index) of cardDiscipline"/>
@@ -38,7 +38,7 @@
       <div id="schedule" class="schedule-block">
         <div class="title-schedule">
 
-          <h1>РАСПИСАНИЕ</h1>
+          <span class="strong">РАСПИСАНИЕ</span>
           <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
         </div>
         <div class="schedule">
@@ -47,21 +47,21 @@
       </div>
       <div class="block-gallery">
         <p>НАШИ ТЕРНИРОВКИ</p>
-        <h1>ГАЛЕРЕЯ</h1>
+        <span class="strong">ГАЛЕРЕЯ</span>
         <Gallery :source="this.$store.getters['discipline/active']"/>
       </div>
       <div id="teachers" class="coaches-block">
         <div class="title">
           <p>НАШИ НАСТАВНИКИ</p>
-          <h1>ТРЕНЕРЫ</h1>
+          <span class="strong">ТРЕНЕРЫ</span>
         </div>
         <coaches/>
       </div>
       <div id="contacts" class="contacts">
         <div class="title">
-          <h1>
+          <span class="strong">
             КОНТАКТЫ
-          </h1>
+          </span>
         </div>
         <div class="contacts-info">
           <div class="mail">
@@ -497,7 +497,7 @@ main {
   margin-top: 135px;
 }
 
-h1 {
+h1,.strong {
   width: 600px;
   font-size: 48px;
   font-weight: 600;
@@ -588,7 +588,7 @@ h1 {
   margin-bottom: 60px;
 }
 
-.title-schedule > h1 {
+.title-schedule > h1,.title-schedule >.strong {
   width: fit-content;
   margin-right: 22px;
   font-weight: 700;
@@ -622,6 +622,9 @@ h1 {
   padding-left: calc((100vw - 1300px) / 2);
   margin-top: 80px !important;
 }
+.block-gallery .strong{
+  margin-bottom: 40px;
+}
 
 .coaches-block {
   z-index: 6;
@@ -638,7 +641,7 @@ h1 {
   width: auto;
 }
 
-.coaches-block h1 {
+.coaches-block h1,.coaches-block .strong {
   width: auto;
 }
 
@@ -724,7 +727,7 @@ h1 {
     margin-top: 9.375vw;
   }
 
-  h1 {
+  h1,.strong {
     width: 41.7vw;
     font-size: 3.33vw;
   }
@@ -773,7 +776,7 @@ h1 {
     margin-bottom: 4.17vw;
   }
 
-  .title-schedule > h1 {
+  .title-schedule > h1,.title-schedule >.strong {
     margin-right: 1.53vw;
     font-size: 3.33vw;
   }
@@ -787,6 +790,9 @@ h1 {
   .block-gallery {
     margin-top: 5.5vw !important;
     padding-right: 0 !important;
+  }
+  .block-gallery{
+    margin-bottom: 2.7vw!important;
   }
 
   .coaches-block {
@@ -855,7 +861,7 @@ h1 {
     background: none !important;
   }
 
-  .title-block h1 {
+  .title-block h1,.title-block .strong {
     max-width: 40%;
     color: #FFF;
     font-size: 22px;
@@ -912,7 +918,7 @@ h1 {
     text-transform: uppercase;
   }
 
-  .training > .title-training > h1 {
+  .training > .title-training > h1,.training > .title-training > .strong {
     color: #FFF;
     font-size: 24px;
     font-weight: 600;
@@ -931,7 +937,7 @@ h1 {
     justify-content: flex-start;
   }
 
-  .title-schedule > h1 {
+  .title-schedule > h1,.title-schedule > .strong {
     font-size: 24px;
     font-weight: 600;
   }
@@ -945,7 +951,7 @@ h1 {
     margin: 0 -25px;
   }
 
-  .block-gallery > h1 {
+  .block-gallery > h1,.block-gallery > .strong {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -964,7 +970,7 @@ h1 {
     align-items: flex-start;
   }
 
-  .coaches-block > .title > h1 {
+  .coaches-block > .title > h1 , .coaches-block > .title > .strong{
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -987,7 +993,7 @@ h1 {
     flex-direction: column;
   }
 
-  .contacts > .title > h1 {
+  .contacts > .title > h1,.contacts > .title > .strong {
     font-size: 24px;
     font-weight: 600;
   }
