@@ -56,4 +56,34 @@ td{
   border: #EDB406 1px solid;
   font-size: 24px;
 }
+@media (max-width: 425px) {
+  .layout {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  p{
+    font-size: 18px;
+    margin: 5px 0;
+  }
+
+  h1,h2,h3,h4,h5{
+    margin: 10px 0;
+  }
+  h2{
+    font-size: 22px;
+  }
+  p span{
+    padding-left: 20px;
+  }
+  table{
+    max-width: 95%;
+  }
+  td{
+    padding: 5px 10px;
+    font-size: 18px;
+  }
+  h1{
+    font-size: 24px;
+  }
+}
 </style>

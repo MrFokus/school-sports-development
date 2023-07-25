@@ -64,5 +64,11 @@ footer .content p{
     width: 30px;
     margin-left: 16px !important;
   }
+  .phone{
+    display: none;
+  }
+  .privacy{
+    font-size: 14px;
+  }
 }
 </style>
