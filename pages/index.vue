@@ -42,9 +42,9 @@
           <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
         </div>
         <div class="schedule">
-          <noscript>
+          <noindex>
           <table-schedule :schedule="schedule"/>
-          </noscript>
+          </noindex>
         </div>
       </div>
       <div class="block-gallery">
