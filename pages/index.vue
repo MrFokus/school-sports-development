@@ -41,11 +41,11 @@
           <span class="strong">РАСПИСАНИЕ</span>
           <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
         </div>
+        <noindex>
         <div class="schedule">
-          <noindex>
           <table-schedule :schedule="schedule"/>
-          </noindex>
         </div>
+        </noindex>
       </div>
       <div class="block-gallery">
         <p>НАШИ ТЕРНИРОВКИ</p>
