@@ -902,6 +902,7 @@ h1,.strong {
     z-index: -1;
     top: -10%;
     margin: 0;
+    min-width: 340px;
   }
 
   .background-block:first-child > .content {
