@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <div class="content">
-      <h1>Меню</h1>
+      <p class="title">Меню</p>
       <ul class="redirect">
         <li @click="$emit('close-menu')"><nuxt-link to="/">Главная</nuxt-link></li>
         <li @click="$emit('close-menu')"><nuxt-link to="/info/karate">Тренировки Каратэ</nuxt-link></li>
@@ -49,7 +49,7 @@ a{
 a:hover{
   color: #EDB406;
 }
-h1{
+.title{
   font-weight: 600;
 }
 

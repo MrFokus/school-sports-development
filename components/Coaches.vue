@@ -3,7 +3,7 @@
     <div v-for="coach in coaches" class="coach">
       <img :src="coach.img" alt="">
       <div class="name-block">
-        <h3 class="name" v-html="coach.name"></h3>
+        <p class="name" v-html="coach.name"></p>
         <p class="discipline">{{ coach.discipline }}</p>
       </div>
     </div>

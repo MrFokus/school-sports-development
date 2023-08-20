@@ -3,7 +3,7 @@
     <div @click="closeModal" class="out-space"/>
     <div class="content">
       <div class="title">
-        <h2>Напишите нам</h2>
+        <p class="feedback">Напишите нам</p>
         <img @click="closeModal" src="~/assets/img/close.svg" alt="">
       </div>
       <div class="mail">
@@ -119,7 +119,7 @@ export default {
   margin-bottom: 20px;
 }
 
-h2 {
+.feedback {
   color: white;
 }
 
@@ -212,7 +212,7 @@ h2 {
 }
 
 @media (max-width: 1439px) and (min-width: 426px) {
-  h2 {
+  .feedback {
     font-size: 2vw;
   }
 
@@ -263,7 +263,7 @@ h2 {
     max-width: none;
   }
 
-  .title > h2 {
+  .title > .feedback {
     font-size: 20px;
   }
 
