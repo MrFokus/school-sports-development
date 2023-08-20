@@ -4,8 +4,8 @@
       <p class="phone">8 (980) 355-66-60</p>
       <nuxt-link class="privacy" to="/privacy">Политика конфидециальности</nuxt-link>
       <div class="messengers">
-        <a href="https://t.me/karatelipetsk"><img src="@/assets/img/telegram-icon.svg" alt=""></a>
-        <a href="https://vk.com/kickboxinglipetsk"><img src="@/assets/img/vk-icon.svg" alt=""></a>
+        <a href="https://t.me/karatelipetsk"><img src="@/assets/img/telegram-icon.svg" alt="Мы в Телеграмм"></a>
+        <a href="https://vk.com/kickboxinglipetsk"><img src="@/assets/img/vk-icon.svg" alt="Мы в ВКонтакте"></a>
       </div>
     </div>
   </footer>

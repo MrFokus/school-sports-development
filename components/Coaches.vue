@@ -1,7 +1,7 @@
 <template>
   <div class="coaches">
     <div v-for="coach in coaches" class="coach">
-      <img :src="coach.img" alt="">
+      <img :src="coach.img" :alt="coach.clear_name">
       <div class="name-block">
         <p class="name" v-html="coach.name"></p>
         <p class="discipline">{{ coach.discipline }}</p>
@@ -17,26 +17,31 @@ export default {
       coaches: [
         {
           img: '/coaches/Kyzym-Evgeniy.png',
+          clear_name:'Кызым Евгений Васильевич',
           name:'Кызым Евгений<br>Васильевич',
           discipline:"Карате, Кикбоксинг",
         },
         {
           img: '/coaches/Kyzym-Igor.png',
+          clear_name:'Кызым Игорь Васильевич',
           name:'Кызым Игорь<br>Васильевич',
           discipline:"Карате",
         },
         {
           img: '/coaches/Mamedov-Rauf.png',
+          clear_name:'Мамедов Рауф Фахрадович',
           name:'Мамедов Рауф<br>Фахрадович',
           discipline:"Кикбоксинг",
         },
         {
           img: '/coaches/Buneev-Maxim.png',
+          clear_name:'Бунеев Максим Николаевич',
           name:'Бунеев Максим<br>Николаевич',
           discipline:"Карате",
         },
         {
           img: '/coaches/Kyzym-German.png',
+          clear_name:'Кызым Герман Игоревич',
           name:'Кызым Герман<br>Игоревич',
           discipline:"Карате",
         }

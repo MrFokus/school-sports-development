@@ -332,6 +332,7 @@ export const actions = {
       commit('addPhoto', {name: payload, img: res.data.map(item => ({
           src:item.url,
           type:item.type,
+          text:item.text
         }))})
     }
   }
