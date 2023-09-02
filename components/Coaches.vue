@@ -19,13 +19,13 @@ export default {
           img: '/coaches/Kyzym-Evgeniy.png',
           clear_name:'Кызым Евгений Васильевич',
           name:'Кызым Евгений<br>Васильевич',
-          discipline:"Карате, Кикбоксинг",
+          discipline:"Каратэ, Кикбоксинг",
         },
         {
           img: '/coaches/Kyzym-Igor.png',
           clear_name:'Кызым Игорь Васильевич',
           name:'Кызым Игорь<br>Васильевич',
-          discipline:"Карате",
+          discipline:"Каратэ",
         },
         {
           img: '/coaches/Mamedov-Rauf.png',
@@ -37,13 +37,13 @@ export default {
           img: '/coaches/Buneev-Maxim.png',
           clear_name:'Бунеев Максим Николаевич',
           name:'Бунеев Максим<br>Николаевич',
-          discipline:"Карате",
+          discipline:"Каратэ",
         },
         {
           img: '/coaches/Kyzym-German.png',
           clear_name:'Кызым Герман Игоревич',
           name:'Кызым Герман<br>Игоревич',
-          discipline:"Карате",
+          discipline:"Каратэ",
         }
       ],
     }
