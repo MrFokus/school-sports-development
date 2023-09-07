@@ -1,6 +1,6 @@
 <template>
   <div class="gallery">
-    <div v-if="s.type==='photo'" v-for="s in source.all.gallery.img" class="content">
+    <div @click="OpenPhoto(s.src)" v-if="s.type==='photo'" v-for="s in source.all.gallery.img" class="content">
       <img  :src="s.src" :alt="s.text">
     </div>
     <div v-if="s.type==='video'" v-for="s in source.all" class="content">
@@ -31,6 +31,12 @@ export default {
       }else {
         this.width = window.innerWidth * (640 / 1440);
         this.height = window.innerWidth * (360 / 1440);
+      }
+    },
+    OpenPhoto(photo){
+      if (window.innerWidth<=425) {
+        this.$store.commit('modal/setViewingPhoto', photo)
+        document.documentElement.style.overflow = 'hidden'
       }
     }
   },

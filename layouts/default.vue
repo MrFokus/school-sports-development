@@ -4,6 +4,7 @@
     <Nuxt />
     <Footer/>
     <ModalPolicy/>
+    <viewing/>
   </div>
 </template>
 
@@ -11,11 +12,13 @@
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ModalPolicy from "@/components/ModalPolicy";
+import Viewing from "@/components/Viewing";
 export default {
   components:{
     Header,
     Footer,
     ModalPolicy,
+    Viewing,
   },
 }
 </script>

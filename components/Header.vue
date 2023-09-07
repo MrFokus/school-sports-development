@@ -137,7 +137,7 @@ div {
   position: absolute;
   width: 20px;
   background-color: white;
-  border: white 1.5px solid;
+  border: white 1px solid;
   border-radius: 999px;
   transition: all 0.2s;
 }
