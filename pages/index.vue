@@ -429,19 +429,22 @@ export default {
           title: 'Каратэ',
           age: 5,
           price: 200,
-          img: 'Karate.png'
+          img: 'Karate.png',
+          src:'info/karate',
         },
         {
           title: 'Кикбоксинг',
           age: 5,
           price: 200,
-          img: 'KickBoxing.png'
+          img: 'KickBoxing.png',
+          src:'info/kickboxing',
         },
         {
           title: 'Развивающие детские тренировки',
           age: 3,
           price: 200,
-          img: 'YoungTR.png'
+          img: 'YoungTR.png',
+          src:'info/child-training',
         },
       ],
     }

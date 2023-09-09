@@ -1,11 +1,11 @@
 <template>
-  <div class="card-discipline">
+  <div @click="$router.push(card.src)" class="card-discipline">
     <div :style="{background: `url('${require(`~/assets/img/${card.img}`)}')`}" class="card">
       <div class="blackout"/>
       <div class="content">
         <span class="strong">{{ card.title }}</span>
         <p class="age">от {{ card.age }} лет</p>
-        <button @click="$store.commit('modal/setModalActive',true)" class="price">от {{card.price}} ₽</button>
+        <button class="price">от {{card.price}} ₽</button>
       </div>
     </div>
     <button @click="$store.commit('modal/setModalActive',true)" class="sign-up-training"> ЗАПИСАТЬСЯ НА ПРОБНУЮ ТРЕНИРОВКУ </button>
