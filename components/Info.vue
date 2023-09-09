@@ -19,7 +19,7 @@
     </div>
     <div v-if="discipline.teachers" class="teachers">
       <h1>Наши тренеры</h1>
-      <div v-for="teacher in discipline.teachers" class="teacher">
+      <div v-for="teacher in discipline.teachers" :id="teacher.src" class="teacher">
         <img :src="teacher.img" alt="">
         <div class="description">
           <h3 class="name">{{teacher.name}}</h3>

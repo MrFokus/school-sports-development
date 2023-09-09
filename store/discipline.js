@@ -65,6 +65,7 @@ export const state = () => ({
       },
       teachers: [
         {
+          src:'evgeniy-kyzym',
           img: "/coaches/Kyzym-Evgeniy.png",
           name: "Кызым Евгений Васильевич ",
           description: "Мастер спорта <br>" +
@@ -74,6 +75,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
+          src:'igor-kyzym',
           img: "/coaches/Kyzym-Igor.png",
           name: "Кызым Игорь Васильевич ",
           description: "Мастер спорта <br>" +
@@ -83,6 +85,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
+          src:'maxim-buneev',
           img: "/coaches/Buneev-Maxim.png",
           name: "Бунеев Максим Николаевич ",
           description: "Мастер спорта<br>" +
@@ -92,6 +95,7 @@ export const state = () => ({
             "по каратэ в разделе КАТА"
         },
         {
+          src:'german-kyzym',
           img: "/coaches/Kyzym-German.png",
           name: "Кызым Герман Игоревич",
           description: "Кандидат в мастера спорта <br>" +
@@ -153,6 +157,7 @@ export const state = () => ({
       },
       teachers: [
         {
+          src:'evgeniy-kyzym',
           img: "/coaches/Kyzym-Evgeniy.png",
           name: "Кызым Евгений Васильевич ",
           description: "Мастер спорта <br>" +
@@ -162,6 +167,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
+          src:'rauf-mamedov',
           img: "/coaches/Mamedov-Rauf.png",
           name: "Мамедов Рауф Фахрадович ",
           description: "Мастер спорта. <br>" +
@@ -223,6 +229,7 @@ export const state = () => ({
       },
       teachers: [
         {
+          src:'evgeniy-kyzym',
           img: "/coaches/Kyzym-Evgeniy.png",
           name: "Кызым Евгений Васильевич ",
           description: "Мастер спорта <br>" +
@@ -232,6 +239,7 @@ export const state = () => ({
             "Тренер высшей категории"
         },
         {
+          src:'igor-kyzym',
           img: "/coaches/Kyzym-Igor.png",
           name: "Кызым Игорь Васильевич ",
           description: "Мастер спорта <br>" +

@@ -1,10 +1,10 @@
 <template>
   <div class="coaches">
-    <div v-for="coach in coaches" class="coach">
+    <div @click="$router.push(coach.src)" v-for="coach in coaches" class="coach">
       <img :src="coach.img" :alt="coach.clear_name">
       <div class="name-block">
         <p class="name" v-html="coach.name"></p>
-        <p class="discipline">{{ coach.discipline }}</p>
+        <p class="discipline">{{ coach.discipline }}</p>s
       </div>
     </div>
   </div>
@@ -20,30 +20,35 @@ export default {
           clear_name:'Кызым Евгений Васильевич',
           name:'Кызым Евгений<br>Васильевич',
           discipline:"Каратэ, Кикбоксинг",
+          src:'/info/karate#evgeniy-kyzym',
         },
         {
           img: '/coaches/Kyzym-Igor.png',
           clear_name:'Кызым Игорь Васильевич',
           name:'Кызым Игорь<br>Васильевич',
           discipline:"Каратэ",
+          src:'/info/karate#igor-kyzym',
         },
         {
           img: '/coaches/Mamedov-Rauf.png',
           clear_name:'Мамедов Рауф Фахрадович',
           name:'Мамедов Рауф<br>Фахрадович',
           discipline:"Кикбоксинг",
+          src:'/info/kickboxing#rauf-mamedov',
         },
         {
           img: '/coaches/Buneev-Maxim.png',
           clear_name:'Бунеев Максим Николаевич',
           name:'Бунеев Максим<br>Николаевич',
           discipline:"Каратэ",
+          src:'/info/karate#maxim-buneev',
         },
         {
           img: '/coaches/Kyzym-German.png',
           clear_name:'Кызым Герман Игоревич',
           name:'Кызым Герман<br>Игоревич',
           discipline:"Каратэ",
+          src:'/info/karate#german-kyzym',
         }
       ],
     }
