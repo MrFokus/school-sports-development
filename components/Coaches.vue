@@ -4,7 +4,7 @@
       <img :src="coach.img" :alt="coach.clear_name">
       <div class="name-block">
         <p class="name" v-html="coach.name"></p>
-        <p class="discipline">{{ coach.discipline }}</p>s
+        <p class="discipline">{{ coach.discipline }}</p>
       </div>
     </div>
   </div>
