@@ -4,7 +4,7 @@ export const state = () => ({
   discipline: {
     karate: {
       head: {
-        title: 'Тренировки Карате',
+        title: 'Тренировки Каратэ',
         meta: [
           {
             hid: 'description',
