@@ -208,7 +208,6 @@ div {
 
   .burger-component {
     width: 100%;
-    border: white 0.15vw solid;
   }
 }
 
