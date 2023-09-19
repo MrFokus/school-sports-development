@@ -1,24 +1,24 @@
 <template>
   <div class="row">
     <div @click="OpenSchedule" :class="`btn-show-all-schedule ${active}`">
-      <span class="strong">{{ row.discipline }}</span>
-      <span class="medium-strong">{{ row.group }}</span>
+      <span class="strong">{{ row.teacher }}</span>
+      <span class="medium-strong">{{ row.discipline }}</span>
     </div>
     <div :style="`max-height:${maxHeight}px`" ref="allSchedule" :class="`all-schedule`">
-      <div v-for="teacher of row.teacher" class="teacher">
-        <span class="medium-strong">{{ teacher.name }}</span>
+      <div v-for="group of row.groups" class="teacher">
+        <span class="medium-strong">{{ group.name }}</span>
         <div class="days">
-          <p class="day" v-for="day of teacher.days">
+          <p class="day" v-for="day of group.days">
             {{ day.day }}
           </p>
         </div>
         <div class="times">
-          <div class="time" v-for="day of teacher.days">
+          <div class="time" v-for="day of group.days">
             <p>{{ day.time }}</p>
           </div>
         </div>
         <div class="addresses">
-          <div class="address" v-for="day of teacher.days">
+          <div class="address" v-for="day of group.days">
             <div class="container">
               <p v-if="day.address_hall" class="visible-address">{{ day.address }}</p>
               <p class="standard-address" v-else>{{ day.address }}</p>
@@ -77,6 +77,7 @@ h1, h3, .strong, .medium-strong {
   color: white;
 }
 h1 ,.strong{
+  text-transform: uppercase;
   font-size: 24px;
   font-weight: bold;
 }
@@ -144,7 +145,7 @@ h1 ,.strong{
 }
 
 .teacher h3, .teacher .medium-strong {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -238,7 +239,7 @@ h1 ,.strong{
   }
 
   .teacher h3, .teacher .medium-strong {
-    font-size: 2vw;
+    font-size: 1.9vw;
   }
 
   .modal-address {
@@ -306,7 +307,7 @@ h1 ,.strong{
   }
 
   .btn-show-all-schedule > h3 , .btn-show-all-schedule > .medium-strong {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     color: #A3A3A3;
   }

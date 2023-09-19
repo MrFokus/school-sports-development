@@ -42,9 +42,9 @@
           <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
         </div>
         <noindex>
-        <div class="schedule">
-          <table-schedule :schedule="schedule"/>
-        </div>
+          <div class="schedule">
+            <table-schedule :schedule="schedule"/>
+          </div>
         </noindex>
       </div>
       <div class="block-gallery">
@@ -105,16 +105,16 @@ import ModalForm from "@/components/ModalForm";
 
 export default {
   head() {
-    return{
+    return {
       title: 'Школа спортивного развития им. В.Н. Кызым',
-      meta:[
+      meta: [
         {
           name: 'description',
           content: 'Секции Карате и Кикбоксинга в Липецке. \n Школа спортивного развития им. В.Н. Кызым проводит как групповые, так и индивидуальные тренировки по карате и кикбоксингу под наставничеством опытных и дипломированных тренеров'
         },
       ],
-      link:[
-        {rel:"canonical", href:"https://school-kyzym.ru/"},
+      link: [
+        {rel: "canonical", href: "https://school-kyzym.ru/"},
       ]
     }
   },
@@ -143,308 +143,345 @@ export default {
       ],
       schedule: [
         {
+          teacher: 'Кызым Евгений Васильевич',
           discipline: 'КАРАТЭ',
-          group: 'ГРУППА НАЧАЛЬНОЙ ПОДГОТОВКИ',
-          teacher: [
+          groups: [
             {
-              name: "Кызым Евгений Васильевич",
+              name: 'Возрастная группа 7-9 лет',
               days: [
                 {
-                  day: "ВТ/ЧТ",
-                  time: "18:00 – 19:00",
-                  address: "Школа №45",
-                  address_hall: "УЛ. П.А. ПАПИНА 4",
-                }
-              ],
-            },
-            {
-              name: "Кызым Игорь Васильевич",
-              days: [
-                {
-                  day: "СБ",
-                  time: "10:00 – 11:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-                {
-                  day: "СР",
-                  time: "18:00 – 19:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-                {
-                  day: "ВТ/ЧТ",
-                  time: "8:30 – 9:30",
-                  address: "Школа №18",
-                  address_hall: "УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25",
-                },
-                {
-                  day: "ВТ/ЧТ",
-                  time: "17:30 – 18:30",
-                  address: "Школа №18",
-                  address_hall: "УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25",
-                },
-                {
-                  day: "ПН/ПТ",
-                  time: "17:30 – 18:30",
-                  address: "Школа №48",
-                  address_hall: "УЛ. КОСМОНАВТОВ 82/4",
-                },
-                {
-                  day: "ПН/ПТ",
-                  time: "20:00 – 21:00",
-                  address: "Школа №49",
-                  address_hall: "УЛ. ЗВЁЗДНАЯ 12",
+                  day: 'ВТ/ЧТ',
+                  time: '18:00 – 19:00',
+                  address: 'Школа №45',
+                  address_hall: 'УЛ. П.А. ПАПИНА 4',
                 },
               ],
             },
             {
-              name: "Кызым Герман Игоревич",
+              name: 'Возрастная группа 10-13 лет',
               days: [
                 {
-                  day: "ВТ/ЧТ",
-                  time: "19:00 – 20:00",
-                  address: "Школа №33",
-                  address_hall: "БУЛ. ШУБИНА 15",
+                  day: 'ПН/СР/ПТ',
+                  time: '18:00 – 19:00',
+                  address: 'Школа №45',
+                  address_hall: 'УЛ. П.А. ПАПИНА 4',
+                },
+              ],
+            },
+            {
+              name: 'Возрастная группа 14+ лет',
+              days: [
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '19:00 – 20:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
                 },
                 {
-                  day: "ЧТ",
-                  time: "15:10 – 16:40",
-                  address: "ГДЮЦ «Спортивный»",
-                  address_hall: "УЛ. СТАХАНОВА 28Б",
-                },
-                {
-                  day: "ЧТ",
-                  time: "16:50 – 18:20",
-                  address: "ГДЮЦ «Спортивный»",
-                  address_hall: "УЛ. СТАХАНОВА 28Б",
-                },
-                {
-                  day: "СБ",
-                  time: "15:20 – 16:50",
-                  address: "ГДЮЦ «Спортивный»",
-                  address_hall: "УЛ. СТАХАНОВА 28Б",
-                },
-                {
-                  day: "СБ",
-                  time: "17:00 – 18:30",
-                  address: "ГДЮЦ «Спортивный»",
-                  address_hall: "УЛ. СТАХАНОВА 28Б",
+                  day: 'СБ',
+                  time: '12:00 – 13:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
                 },
               ],
             },
           ],
-        },//Началка
+        },
         {
+          teacher: 'Кызым Игорь Васильевич',
           discipline: 'КАРАТЭ',
-          group: 'ГРУППА НАЧАЛЬНОЙ ПОДГОТОВКИ (2 ГОД)',
-          teacher: [
+          groups: [
             {
-              name: "Кызым Евгений Васильевич",
+              name: 'Группа начальной подготовки',
               days: [
                 {
-                  day: "ПН/СР/ПТ",
-                  time: "18:00 – 19:00",
-                  address: "Школа №45",
-                  address_hall: "УЛ. П.А. ПАПИНА 4",
-                }
+                  day: 'СБ',
+                  time: '10:00 – 11:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'СР',
+                  time: '18:00 – 19:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '8:30 – 9:30',
+                  address: 'Школа №18',
+                  address_hall: 'УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25',
+                },
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '17:30 – 18:30',
+                  address: 'Школа №18',
+                  address_hall: 'УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25',
+                },
+                {
+                  day: 'ПН/ПТ',
+                  time: '17:30 – 18:30',
+                  address: 'Школа №48',
+                  address_hall: 'УЛ. КОСМОНАВТОВ 82/4',
+                },
+                {
+                  day: 'ПН/ПТ',
+                  time: '20:00 – 21:00',
+                  address: 'Школа №49',
+                  address_hall: 'УЛ. ЗВЁЗДНАЯ 12',
+                },
               ],
+            },
+            {
+              name: 'Тренировочная группа',
+              days: [
+                {
+                  day: 'СР',
+                  time: '19:00 – 20:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'СБ',
+                  time: '11:00 – 12:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '16:30 – 17:30',
+                  address: 'Школа №18',
+                  address_hall: 'УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25',
+                },
+                {
+                  day: 'ПН/ПТ',
+                  time: '17:30 – 18:30',
+                  address: 'Школа №48',
+                  address_hall: 'УЛ. КОСМОНАВТОВ 82/4',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          teacher: 'Кызым Герман Игоревич',
+          discipline: 'КАРАТЭ',
+          groups: [
+            {
+              name: 'Группа начальной подготовки',
+              days: [
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '19:00 – 20:00',
+                  address: 'Школа №33',
+                  address_hall: 'БУЛ. ШУБИНА 15',
+                },
+                {
+                  day: 'ЧТ',
+                  time: '15:10 – 16:40',
+                  address: 'ГДЮЦ «Спортивный»',
+                  address_hall: 'УЛ. СТАХАНОВА 28Б',
+                },
+                {
+                  day: 'ЧТ',
+                  time: '16:50 – 18:20',
+                  address: 'ГДЮЦ «Спортивный»',
+                  address_hall: 'УЛ. СТАХАНОВА 28Б',
+                },
+                {
+                  day: 'СБ',
+                  time: '15:20 – 16:50',
+                  address: 'ГДЮЦ «Спортивный»',
+                  address_hall: 'УЛ. СТАХАНОВА 28Б',
+                },
+                {
+                  day: 'СБ',
+                  time: '17:00 – 18:30',
+                  address: 'ГДЮЦ «Спортивный»',
+                  address_hall: 'УЛ. СТАХАНОВА 28Б',
+                },
+
+              ],
+            },
+          ],
+        },
+        {
+          teacher: 'Бунеев Максим Николаевич',
+          discipline: 'КАРАТЭ',
+          groups: [
+            {
+              name: 'Тренировочная группа',
+              days: [
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '18:00 – 19:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'СБ',
+                  time: '12:00 – 13:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          teacher: 'Кызым Евгений Васильевич',
+          discipline: 'КИКБОКСИНГ',
+          groups: [
+            {
+              name: 'Возрастная группа 7-9 лет',
+              days: [
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '9:00 – 10:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '16:00 – 17:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+              ],
+            },
+            {
+              name: 'Возрастная группа 10-13 лет',
+              days: [
+                {
+                  day: 'ПН/ПТ',
+                  time: '9:00 – 10:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'ПН/ПТ',
+                  time: '19:00 – 20:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'СР',
+                  time: '9:00 – 10:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+                {
+                  day: 'СР',
+                  time: '16:30 – 17:30',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+              ]
+            },
+            {
+              name: 'Возрастная группа 14+ лет',
+              days: [
+                {
+                  day: 'ПН-ПТ',
+                  time: '20:00-21:00',
+                  address: 'УЛ. ПЕРОВА 47',
+                  address_hall: null,
+                },
+              ]
             }
           ],
-        },//Началка 2 год
+        },
         {
-          discipline: 'КАРАТЭ',
-          group: 'ТРЕНИРОВОЧНАЯ ГРУППА',
-          teacher: [
-            {
-              name: "Кызым Евгений Васильевич",
-              days: [
-                {
-                  day: "ВТ/ЧТ",
-                  time: "19:00 – 20:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-                {
-                  day: "СБ",
-                  time: "12:00 – 13:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-              ],
-
-            },
-            {
-              name: "Кызым Игорь Васильевич",
-              days: [
-                {
-                  day: "СР",
-                  time: "19:00 – 20:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-                {
-                  day: "СБ",
-                  time: "11:00 – 12:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-                {
-                  day: "ВТ/ЧТ",
-                  time: "16:30 – 17:30",
-                  address: "Школа №18",
-                  address_hall: "УЛ. ЛЕОНТИЯ КРИВЕРКОВА 25",
-                },
-                {
-                  day: "ПН/ПТ",
-                  time: "17:30 – 18:30",
-                  address: "Школа №48",
-                  address_hall: "УЛ. КОСМОНАВТОВ 82/4",
-                },
-              ],
-
-            },
-            {
-              name: "Бунеев Максим Николаевич",
-              days: [
-                {
-                  day: "ВТ/ЧТ",
-                  time: "18:00 – 19:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-                {
-                  day: "СБ",
-                  time: "12:00 – 13:00",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-              ],
-            },
-          ],
-        },//Тренировочная
-        {
+          teacher: 'Мамедов Рауф Фахрадович',
           discipline: 'КИКБОКСИНГ',
-          group: 'ТРЕНИРОВОЧНАЯ ГРУППА',
-          teacher: [
+          groups: [
             {
-              name: "Кызым Евгений Васильевич",
+              name: 'Группа начальной подготовки',
               days: [
                 {
-                  day: "ВТ/ЧТ",
-                  time: "20:00 – 21:00",
-                  address: "УЛ. ПЕРОВА 47",
+                  day: 'СР/ПТ',
+                  time: '13:30 – 14:30',
+                  address: 'ФИЛЛИПЧЕНКО 7/4',
                   address_hall: null,
                 },
                 {
-                  day: "ПН/ПТ",
-                  time: "19:00 – 20:30",
-                  address: "УЛ. ПЕРОВА 47",
+                  day: 'ПН/СБ',
+                  time: '13:20 – 14:20',
+                  address: 'ФИЛЛИПЧЕНКО 7/4',
                   address_hall: null,
                 },
                 {
-                  day: "СР",
-                  time: "16:30 – 17:30",
-                  address: "УЛ. ПЕРОВА 47",
-                  address_hall: null,
-                },
-              ],
-            }
-          ],
-        },//Тренировочная
-        {
-          discipline: 'КИКБОКСИНГ',
-          group: 'ГРУППА НАЧАЛЬНОЙ ПОДГОТОВКИ',
-          teacher: [
-            {
-              name: "Кызым Евгений Васильевич",
-              days: [
-                {
-                  day: "ВТ/ЧТ",
-                  time: "9:00 – 10:00",
-                  address: "УЛ. ПЕРОВА 47",
+                  day: 'ПТ',
+                  time: '15:10 – 16:10',
+                  address: 'ФИЛЛИПЧЕНКО 7/4',
                   address_hall: null,
                 },
                 {
-                  day: "ВТ/ЧТ",
-                  time: "16:00 – 17:00",
-                  address: "УЛ. ПЕРОВА 47",
+                  day: 'ПТ',
+                  time: '16:50 – 17:50',
+                  address: 'ФИЛЛИПЧЕНКО 7/4',
                   address_hall: null,
                 },
                 {
-                  day: "СР",
-                  time: "16:30 – 17:30",
-                  address: "УЛ. ПЕРОВА 47",
+                  day: 'ВТ/ЧТ',
+                  time: '14:00 – 15:00',
+                  address: 'Ильича 31',
+                  address_hall: null,
+                },
+                {
+                  day: 'ВТ/ЧТ',
+                  time: '15:40 – 16:40',
+                  address: 'Ильича 31',
                   address_hall: null,
                 },
               ],
             },
             {
-              name: "Мамедов Рауф Фахрадович",
+              name: 'Младшая группа',
               days: [
                 {
-                  day: "СР/ПТ",
-                  time: "13:30 – 14:30",
-                  address: "ФИЛЛИПЧЕНКО 7/4",
-                  address_hall: null,
+                  day: 'ВТ/ЧТ/СБ',
+                  time: '19:00 – 20:00',
+                  address: 'ФОК «Спортивный Город»',
+                  address_hall: 'Ул. Германа Титова 8Г',
                 },
+              ],
+            },
+            {
+              name: 'Старшая группа',
+              days: [
                 {
-                  day: "ПН/СБ",
-                  time: "13:20 – 14:20",
-                  address: "ФИЛЛИПЧЕНКО 7/4",
-                  address_hall: null,
-                },
-                {
-                  day: "ПТ",
-                  time: "15:10 – 16:10",
-                  address: "ФИЛЛИПЧЕНКО 7/4",
-                  address_hall: null,
-                },
-                {
-                  day: "ПТ",
-                  time: "16:50 – 17:50",
-                  address: "ФИЛЛИПЧЕНКО 7/4",
-                  address_hall: null,
-                },
-                {
-                  day: "ВТ/ЧТ",
-                  time: "14:00 – 15:00",
-                  address: "Ильича 31",
-                  address_hall: null,
-                },
-                {
-                  day: "ВТ/ЧТ",
-                  time: "15:40 – 16:40",
-                  address: "Ильича 31",
-                  address_hall: null,
+                  day: 'ВТ/ЧТ/СБ',
+                  time: '20:00-21:30',
+                  address: 'ФОК «Спортивный Город»',
+                  address_hall: 'Ул. Германа Титова 8Г',
                 },
               ],
             },
           ],
-        },//Начальная
+        },
       ],
-
       cardDiscipline: [
         {
           title: 'Каратэ',
           age: 5,
           price: 200,
           img: 'Karate.png',
-          src:'info/karate',
+          src: 'info/karate',
         },
         {
           title: 'Кикбоксинг',
           age: 5,
           price: 200,
           img: 'KickBoxing.png',
-          src:'info/kickboxing',
+          src: 'info/kickboxing',
         },
         {
           title: 'Развивающие детские тренировки',
           age: 3,
           price: 200,
           img: 'YoungTR.png',
-          src:'info/child-training',
+          src: 'info/child-training',
         },
       ],
     }
@@ -502,7 +539,7 @@ main {
   margin-top: 135px;
 }
 
-h1,.strong {
+h1, .strong {
   width: 600px;
   font-size: 48px;
   font-weight: 600;
@@ -593,7 +630,7 @@ h1,.strong {
   margin-bottom: 60px;
 }
 
-.title-schedule > h1,.title-schedule >.strong {
+.title-schedule > h1, .title-schedule > .strong {
   width: fit-content;
   margin-right: 22px;
   font-weight: 700;
@@ -627,7 +664,8 @@ h1,.strong {
   padding-left: calc((100vw - 1300px) / 2);
   margin-top: 80px !important;
 }
-.block-gallery .strong{
+
+.block-gallery .strong {
   margin-bottom: 40px;
 }
 
@@ -646,7 +684,7 @@ h1,.strong {
   width: auto;
 }
 
-.coaches-block h1,.coaches-block .strong {
+.coaches-block h1, .coaches-block .strong {
   width: auto;
 }
 
@@ -732,7 +770,7 @@ h1,.strong {
     margin-top: 9.375vw;
   }
 
-  h1,.strong {
+  h1, .strong {
     width: 41.7vw;
     font-size: 3.33vw;
   }
@@ -781,7 +819,7 @@ h1,.strong {
     margin-bottom: 4.17vw;
   }
 
-  .title-schedule > h1,.title-schedule >.strong {
+  .title-schedule > h1, .title-schedule > .strong {
     margin-right: 1.53vw;
     font-size: 3.33vw;
   }
@@ -796,8 +834,9 @@ h1,.strong {
     margin-top: 5.5vw !important;
     padding-right: 0 !important;
   }
-  .block-gallery{
-    margin-bottom: 2.7vw!important;
+
+  .block-gallery {
+    margin-bottom: 2.7vw !important;
   }
 
   .coaches-block {
@@ -866,7 +905,7 @@ h1,.strong {
     background: none !important;
   }
 
-  .title-block h1,.title-block .strong {
+  .title-block h1, .title-block .strong {
     max-width: 40%;
     color: #FFF;
     font-size: 22px;
@@ -924,7 +963,7 @@ h1,.strong {
     text-transform: uppercase;
   }
 
-  .training > .title-training > h1,.training > .title-training > .strong {
+  .training > .title-training > h1, .training > .title-training > .strong {
     color: #FFF;
     font-size: 24px;
     font-weight: 600;
@@ -943,7 +982,7 @@ h1,.strong {
     justify-content: flex-start;
   }
 
-  .title-schedule > h1,.title-schedule > .strong {
+  .title-schedule > h1, .title-schedule > .strong {
     font-size: 24px;
     font-weight: 600;
   }
@@ -957,7 +996,7 @@ h1,.strong {
     margin: 0 -25px;
   }
 
-  .block-gallery > h1,.block-gallery > .strong {
+  .block-gallery > h1, .block-gallery > .strong {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -976,7 +1015,7 @@ h1,.strong {
     align-items: flex-start;
   }
 
-  .coaches-block > .title > h1 , .coaches-block > .title > .strong{
+  .coaches-block > .title > h1, .coaches-block > .title > .strong {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -999,7 +1038,7 @@ h1,.strong {
     flex-direction: column;
   }
 
-  .contacts > .title > h1,.contacts > .title > .strong {
+  .contacts > .title > h1, .contacts > .title > .strong {
     font-size: 24px;
     font-weight: 600;
   }
