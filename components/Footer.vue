@@ -52,7 +52,7 @@ footer .content p{
     width: 2vw;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   footer{
     padding:10px 25px;
     width: 100vw;

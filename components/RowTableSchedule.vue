@@ -248,7 +248,7 @@ h1 ,.strong{
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   .teacher {
     padding: 20px 20px;
     /*grid-template-columns: none;*/

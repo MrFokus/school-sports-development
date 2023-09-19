@@ -257,7 +257,7 @@ export default {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   .content {
     width: 80vw;
     max-width: none;

@@ -1,5 +1,5 @@
 <template>
-  <header ref="Header">
+  <header v-if="!viewing" ref="Header">
     <div class="container">
       <div class="call">
         <p>8 (980) 355-66-60</p>
@@ -31,6 +31,11 @@ export default {
   },
   components: {
     Menu,
+  },
+  computed:{
+    viewing(){
+      return this.$store.getters["modal/viewing_photo"]
+    }
   },
   methods:{
     handleScroll(){
@@ -207,7 +212,7 @@ div {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   .mobile {
     display: flex !important;
     max-height: 100%;

@@ -205,7 +205,7 @@ h2{
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
 
   .name-page{
     font-size: 24px;

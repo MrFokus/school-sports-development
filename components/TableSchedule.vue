@@ -40,7 +40,7 @@ export default {
   border-right: #EDB406 2px solid;
   border-left: #EDB406 2px solid;
 }
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   .table-schedule{
     border-top: #EDB406 0.5px solid;
     border-bottom: #EDB406 0.5px solid;

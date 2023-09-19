@@ -34,10 +34,8 @@ export default {
       }
     },
     OpenPhoto(photo){
-      if (window.innerWidth<=425) {
         this.$store.commit('modal/setViewingPhoto', photo)
         document.documentElement.style.overflow = 'hidden'
-      }
     }
   },
   mounted() {
@@ -65,7 +63,7 @@ export default {
   width: 100%;
   object-fit: cover;
 }
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   .gallery{
     width: 100vw;
     max-height: none;

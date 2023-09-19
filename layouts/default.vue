@@ -34,7 +34,7 @@ export default {
   top: 0;
   z-index: 999;
 }
-/*@media (max-width: 425px) {*/
+/*@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {*/
 /*  .default{*/
 /*    overflow-x: hidden;*/
 /*  }*/

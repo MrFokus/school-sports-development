@@ -100,7 +100,7 @@
     background-color: #c79600;
   }
 }
-@media (max-width: 425px){
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape){
   .modal-policy{
     max-width: 100%;
     position: fixed;

@@ -100,7 +100,7 @@ export default {
     margin-top: 1.4vw;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   .coaches{
     width: 100vw;
     margin-left: -25px;

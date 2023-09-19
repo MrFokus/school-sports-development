@@ -56,7 +56,7 @@ td{
   border: #EDB406 1px solid;
   font-size: 24px;
 }
-@media (max-width: 425px) {
+@media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
   .layout {
     max-width: 100%;
     padding: 0 10px;
