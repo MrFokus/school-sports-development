@@ -166,7 +166,7 @@ div {
 .menu-active .burger-component:last-child {
   transform-origin: center center;
   transform: rotate(-45deg) scale(1.2);
-  bottom: 30%;
+  bottom: 40%;
   margin: 0;
   right: 0;
 }

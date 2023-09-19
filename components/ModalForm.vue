@@ -258,6 +258,9 @@ export default {
 }
 
 @media (max-width: 425px), (max-width: 425px) and (orientation: landscape) {
+  .form{
+    top: 5%
+  }
   .content {
     width: 80vw;
     max-width: none;

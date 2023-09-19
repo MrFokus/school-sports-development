@@ -5,6 +5,7 @@
     <Footer/>
     <ModalPolicy/>
     <viewing/>
+    <News/>
   </div>
 </template>
 
@@ -13,12 +14,14 @@ import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import ModalPolicy from "@/components/ModalPolicy";
 import Viewing from "@/components/Viewing";
+import News from "@/components/News"
 export default {
   components:{
     Header,
     Footer,
     ModalPolicy,
     Viewing,
+    News,
   },
 }
 </script>
