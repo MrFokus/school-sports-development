@@ -29,8 +29,8 @@ export default {
   .close{
     position: absolute;
     z-index: 30;
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 50px;
+    max-height: 50px;
     min-width: 30px;
     min-height: 30px;
     background: rgba(159, 132, 132, 0.24);
