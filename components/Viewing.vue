@@ -31,9 +31,9 @@ export default {
     z-index: 30;
     max-width: 30px;
     max-height: 30px;
-    min-width: 10px;
-    min-height: 10px;
-    background: none;
+    min-width: 30px;
+    min-height: 30px;
+    background: rgba(159, 132, 132, 0.24);
     outline: none;
     width: 3vw;
     height: 3vw;
@@ -42,6 +42,9 @@ export default {
     right: 0;
     left: 90%;
     bottom: 0;
+    border-radius: 999px;
+    padding: min(2vw, 10px);
+    box-sizing: border-box;
   }
   .close img{
     width: 100%;
@@ -83,8 +86,9 @@ export default {
   }
   @media (orientation: landscape) {
     .viewing .card img{
-      max-height: 80vh;
-      min-width: 70vw;
+      max-height: 90vh;
+      min-height: 80vh;
+      max-width: 100vw;
     }
   }
 
