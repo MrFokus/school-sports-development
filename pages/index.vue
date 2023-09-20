@@ -7,8 +7,8 @@
           <div class="title">
             <h1>ШКОЛА СПОРТИВНОГО РАЗВИТИЯ ИМЕНИ <br> В. Н. КЫЗЫМ</h1>
             <div class="btn-block">
-              <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ НА БЕСПЛАТНУЮ ТРЕНИРОВКУ</button>
-              <button class="mobile" @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
+              <button @click="OpenModal(false)">ЗАПИСАТЬСЯ НА БЕСПЛАТНУЮ ТРЕНИРОВКУ</button>
+              <button class="mobile" @click="OpenModal(false)">ЗАПИСАТЬСЯ</button>
               <img src="~/assets/img/btn-arrow.png" alt="" class="btn-arrow">
             </div>
           </div>
@@ -39,7 +39,7 @@
         <div class="title-schedule">
 
           <span class="strong">РАСПИСАНИЕ</span>
-          <button @click="$store.commit('modal/setModalActive',true)">ЗАПИСАТЬСЯ</button>
+          <button @click="OpenModal(false)">ЗАПИСАТЬСЯ</button>
         </div>
         <noindex>
           <div class="schedule">
@@ -84,6 +84,13 @@
           </div>
         </div>
       </div>
+      <div class="partners">
+        <p class="strong">НАШИ ПАРТНЁРЫ</p>
+        <div class="partners-container">
+          <a class="partner" href="https://likvidator.guru/"><img :src="require('@/assets/img/likvidator.svg')" alt="Ликвидатор"></a>
+        </div>
+        <button @click="OpenModal(true)" class="send">Стать партнёром</button>
+      </div>
     </div>
     <ClientOnly>
       <yandex-map class="map" :coords="main_coord" :zoom="17" ref="map" :controls="['fullscreenControl']">
@@ -91,7 +98,7 @@
         <ymap-marker :key="index++" v-for="(c,index) in coord" :coords="c" :searchControl="false" :markerId="index++"/>
       </yandex-map>
     </ClientOnly>
-    <modal-form v-show="$store.getters['modal/active']===true" @closeModal="$store.commit('modal/setModalActive',false)"
+    <modal-form v-show="$store.getters['modal/active']===true" :is-partner="sendFromCompany" @closeModal="()=>{this.$store.commit('modal/setModalActive',false);this.sendFromCompany = false}"
                 class="form"/>
   </main>
 </template>
@@ -128,8 +135,17 @@ export default {
   created() {
     this.$store.dispatch('discipline/getPhoto', 'all')
   },
+  methods:{
+    OpenModal(isCompany){
+      if (isCompany){
+        this.sendFromCompany = true;
+      }
+      this.$store.commit('modal/setModalActive',true)
+    }
+  },
   data() {
     return {
+      sendFromCompany:false,
       modal: false,
       main_coord: [52.600753, 39.566943],
       coord: [
@@ -547,13 +563,13 @@ h1, .strong {
   color: white;
 }
 
-.btn-block {
+.btn-block{
   align-items: flex-end;
   margin: 20px 0 0 0;
   overflow: hidden;
 }
 
-.btn-block > button {
+.btn-block > button,  .partners .send {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -574,11 +590,11 @@ h1, .strong {
   margin-left: 70px;
 }
 
-.btn-block > button:hover {
+.btn-block > button:hover,.partners .send:hover {
   background-color: #dfa900;
 }
 
-.btn-block > button:active {
+.btn-block > button:active,.partners .send:active {
   background-color: #c79600;
 }
 
@@ -748,7 +764,31 @@ h1, .strong {
 .mobile {
   display: none !important;
 }
-
+.partners{
+  flex-direction: column;
+  padding-top: 80px;
+}
+.partners-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  grid-gap: min(2vw,15px);
+}
+.partners-container a{
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+}
+.partners-container a img{
+  max-width: 100%;
+  object-fit: cover;
+}
+.partners .send{
+  margin: 30px auto !important;
+  text-transform: uppercase;
+}
+.partners .strong{
+  margin: 20px 0;
+}
 @media (max-width: 1439px) and (min-width: 426px) {
   .background-block > div {
     width: 100%;
@@ -780,7 +820,7 @@ h1, .strong {
     margin: 1.39vw 0 0 0;
   }
 
-  .btn-block > button {
+  .btn-block > button, .partners .send  {
     width: 27.8vw;
     padding: 1.25vw 2.08vw;
     margin: 0 0 1.7vw 0;
@@ -924,13 +964,17 @@ h1, .strong {
     display: none;
   }
 
-  .btn-block > button.mobile {
+  .btn-block > button.mobile, .partners .send  {
     max-width: 200px;
     color: #FFF;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     padding: 8px 14px;
+  }
+  .partners .send{
+    margin-top: 20px;
+    max-width: 100%;
   }
 
   .btn-arrow {
@@ -997,7 +1041,7 @@ h1, .strong {
     margin: 0 -25px;
   }
 
-  .block-gallery > h1, .block-gallery > .strong {
+  .block-gallery > h1, .block-gallery > .strong, .partners .strong {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;

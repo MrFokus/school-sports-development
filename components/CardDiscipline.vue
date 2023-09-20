@@ -1,6 +1,6 @@
 <template>
-  <div @click="$router.push(card.src)" class="card-discipline">
-    <div :style="{background: `url('${require(`~/assets/img/${card.img}`)}')`}" class="card">
+  <div class="card-discipline">
+    <div @click="$router.push(card.src)" :style="{background: `url('${require(`~/assets/img/${card.img}`)}')`}" class="card">
       <div class="blackout"/>
       <div class="content">
         <span class="strong">{{ card.title }}</span>

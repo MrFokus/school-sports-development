@@ -10,6 +10,10 @@
         <p>Адрес электронной почты</p>
         <input v-model="mail" type="email">
       </div>
+      <div v-if="isPartner" class="company">
+        <p>Название организации</p>
+        <input v-model="company" type="text">
+      </div>
       <div class="phone">
         <p>Телефон</p>
         <input v-model="phone" type="tel">
@@ -33,6 +37,14 @@
 
 <script>
 export default {
+  props:{
+    isPartner:{
+      type: Boolean,
+      default: ()=>{
+        return false
+      }
+    }
+  },
   data() {
     return {
       widthForm: 650,
@@ -42,6 +54,7 @@ export default {
       response: {},
       error: '',
       policy: false,
+      company:null,
     }
   },
   methods: {
@@ -66,6 +79,7 @@ export default {
             phone: this.phone,
             comment: this.comment,
             policy: this.policy,
+            company: this.company,
           })
           if (!res.data.error) {
             this.closeModal()
