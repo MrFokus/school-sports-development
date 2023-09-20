@@ -73,13 +73,19 @@ export default {
           setTimeout(() => {
             this.error = ''
           }, 5000)
-        } else if (this.policy) {
+        } else if(!this.company.trim() && this.isPartner){
+          this.error = "Все поля должны быть заполнены!"
+          setTimeout(() => {
+            this.error = ''
+          }, 5000)
+        }
+        else if (this.policy) {
           let res = await this.$axios.post('https://school-kyzym.ru:8877/', {
-            mail: this.mail,
-            phone: this.phone,
+            mail: this.mail.trim(),
+            phone: this.phone.trim(),
             comment: this.comment,
             policy: this.policy,
-            company: this.company,
+            company: this.company.trim(),
           })
           if (!res.data.error) {
             this.closeModal()
