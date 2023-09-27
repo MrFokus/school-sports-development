@@ -73,7 +73,8 @@ export default {
           setTimeout(() => {
             this.error = ''
           }, 5000)
-        } else if(!this.company.trim() && this.isPartner){
+        }
+        else if(this.isPartner&&!this.company.trim()){
           this.error = "Все поля должны быть заполнены!"
           setTimeout(() => {
             this.error = ''
@@ -85,7 +86,7 @@ export default {
             phone: this.phone.trim(),
             comment: this.comment,
             policy: this.policy,
-            company: this.company.trim(),
+            company: this.company?.trim(),
           })
           if (!res.data.error) {
             this.closeModal()
