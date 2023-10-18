@@ -8,6 +8,7 @@
         <li @click="$emit('close-menu')"><nuxt-link to="/info/kickboxing">Тренировки Кикбоксинг</nuxt-link></li>
         <li @click="$emit('close-menu')"><nuxt-link to="/info/child-training">Детские развиващие тренировки</nuxt-link></li>
         <li @click="$emit('close-menu')"><nuxt-link to="/info/school">О нас</nuxt-link></li>
+        <li @click="$emit('close-menu')"><nuxt-link to="/filials">Филиалы</nuxt-link></li>
       </ul>
       <div v-if="$route.path==='/'">
         <a href="#schedule">Расписание</a>
