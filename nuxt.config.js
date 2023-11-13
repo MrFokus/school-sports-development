@@ -45,6 +45,14 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
+    ['@nuxtjs/yandex-metrika', {
+      id: '94688483', // замените на свой идентификатор Яндекс.Метрики
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true,
+      setUserId: true // включает отправку setUserId
+    }]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
