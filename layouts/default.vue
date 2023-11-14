@@ -5,7 +5,7 @@
     <Footer/>
     <ModalPolicy/>
     <viewing/>
-    <News/>
+<!--    <News/>-->
   </div>
 </template>
 

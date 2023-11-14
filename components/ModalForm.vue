@@ -3,8 +3,16 @@
     <div @click="closeModal" class="out-space"/>
     <div class="content">
       <div class="title">
-        <p class="feedback">Напишите нам</p>
+        <p class="feedback">Заказать обратный звонок</p>
         <img @click="closeModal" src="~/assets/img/close.svg" alt="">
+      </div>
+      <div class="name">
+        <p>Имя</p>
+        <input v-model="name" type="tel">
+      </div>
+      <div class="phone">
+        <p>Телефон</p>
+        <input v-model="phone" type="tel">
       </div>
       <div class="mail">
         <p>Адрес электронной почты</p>
@@ -14,10 +22,7 @@
         <p>Название организации</p>
         <input v-model="company" type="text">
       </div>
-      <div class="phone">
-        <p>Телефон</p>
-        <input v-model="phone" type="tel">
-      </div>
+
       <div class="comment">
         <p>Комментарий</p>
         <p class="description">Напишите ваши пожелания (дата, время, тренер, дисциплина, возраст учащегося)</p>
@@ -55,6 +60,7 @@ export default {
       error: '',
       policy: false,
       company:null,
+      name:''
     }
   },
   methods: {
@@ -62,7 +68,7 @@ export default {
       this.$emit('closeModal')
     },
     async sendForm() {
-      if (this.mail && this.phone && this.comment) {
+      if (this.mail.trim() && this.phone.trim() && this.comment.trim() && this.name.trim()) {
         if (!/\S+@\S+\.\S+/.test(this.mail)) {
           this.error = "Неверный почтовый адрес"
           setTimeout(() => {
@@ -82,6 +88,7 @@ export default {
         }
         else if (this.policy) {
           let res = await this.$axios.post('https://school-kyzym.ru:8877/', {
+            name:this.name.trim(),
             mail: this.mail.trim(),
             phone: this.phone.trim(),
             comment: this.comment,
@@ -126,7 +133,7 @@ export default {
 }
 
 .content {
-  max-width: 50%;
+  max-width: 30%;
   position: absolute;
   outline: #EDB406 2px solid;
   padding: 10px 20px 20px 20px;
@@ -142,10 +149,11 @@ export default {
 
 .feedback {
   color: white;
+  font-size: 24px !important;
 }
 
 .content > div > input {
-  padding: 4px 8px;
+  padding: 2px 6px;
   outline: none;
   border: none;
   font-size: 18px;
