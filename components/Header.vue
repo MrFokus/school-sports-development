@@ -1,5 +1,5 @@
 <template>
-  <header v-if="!viewing" ref="Header">
+  <header v-if="!viewing && !modal" ref="Header">
     <div class="container">
       <div class="call">
         <p>8 (980) 355-66-60</p>
@@ -34,7 +34,10 @@ export default {
   },
   computed:{
     viewing(){
-      return this.$store.getters["modal/viewing_photo"]
+      return this.$store.getters["modal/viewing"]
+    },
+    modal(){
+      return this.$store.getters["modal/active"]
     }
   },
   methods:{

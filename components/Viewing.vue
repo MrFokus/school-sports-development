@@ -13,12 +13,12 @@
 export default {
   computed:{
     photo(){
-      return this.$store.getters["modal/viewing_photo"]
+      return this.$store.getters["modal/viewing"]
     },
   },
   methods:{
     ClosePhoto(){
-        this.$store.commit('modal/setViewingPhoto', null)
+        this.$store.commit('modal/setViewing', null)
         document.documentElement.style.overflow = 'auto'
     },
   },

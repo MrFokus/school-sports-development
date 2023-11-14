@@ -1,16 +1,16 @@
 export const state = () => ({
   active: false,
-  viewing_photo:null,
+  viewing:null,
 })
 export const getters ={
   active: s => s.active,
-  viewing_photo: s => s.viewing_photo,
+  viewing: s => s.viewing,
 }
 export const mutations = {
   setModalActive(store, payload){
     store.active = payload
   },
-  setViewingPhoto(store, payload){
-    store.viewing_photo = payload
+  setViewing(store, payload){
+    store.viewing = payload
   },
 }

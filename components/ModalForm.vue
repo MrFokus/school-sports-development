@@ -65,6 +65,7 @@ export default {
   },
   methods: {
     closeModal() {
+      this.$store.commit('modal/setViewing', null)
       this.$emit('closeModal')
     },
     async sendForm() {
@@ -291,8 +292,10 @@ export default {
     top: 5%
   }
   .content {
-    width: 80vw;
+    width: 100vw;
+    height: 100vh;
     max-width: none;
+    padding: 40px 30px;
   }
 
   .title > .feedback {
