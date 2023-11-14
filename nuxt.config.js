@@ -52,9 +52,18 @@ export default {
       accurateTrackBounce: true,
       webvisor: true,
       setUserId: true // включает отправку setUserId
-    }]
-  ],
+    }],
+    ['nuxt-vk-pixel', {
+      /* module options */
+      id: '3417864',
+      debug: false,
+    }
+    ],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+    // Build Configuration: https://go.nuxtjs.dev/config-build
+    build
+:
+{
+}
+,
 }
