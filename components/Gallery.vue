@@ -34,7 +34,7 @@ export default {
       }
     },
     OpenPhoto(photo){
-        this.$store.commit('modal/setViewingPhoto', photo)
+        this.$store.commit('modal/setViewing', photo)
         document.documentElement.style.overflow = 'hidden'
     }
   },

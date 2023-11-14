@@ -1,5 +1,5 @@
 <template>
-  <header v-if="!viewing && !modal" ref="Header">
+  <header v-if="!viewing && (!modal || windowWidth>420) " ref="Header">
     <div class="container">
       <div class="call">
         <p>8 (980) 355-66-60</p>
@@ -27,38 +27,39 @@ export default {
   data() {
     return {
       menuActive: false,
+      windowWidth: null,
     }
   },
   components: {
     Menu,
   },
-  computed:{
-    viewing(){
+  computed: {
+    viewing() {
       return this.$store.getters["modal/viewing"]
     },
-    modal(){
+    modal() {
       return this.$store.getters["modal/active"]
     }
   },
-  methods:{
-    handleScroll(){
-      if(window.innerWidth <=425){
-        if (window.scrollY>10 && this.$refs.Header.style){
-          this.$refs.Header.style.backgroundColor='#181818'
+  methods: {
+    handleScroll() {
+      this.windowWidth = window.innerWidth
+      if (window.innerWidth <= 425) {
+        if (window.scrollY > 10 && this.$refs.Header.style) {
+          this.$refs.Header.style.backgroundColor = '#181818'
+        } else {
+          this.$refs.Header.style.background = 'none'
         }
-        else {
-          this.$refs.Header.style.background='none'
-        }
-      }
-      else{
-        this.$refs.Header.style.backgroundColor='#EDB406'
+      } else {
+        this.$refs.Header.style.backgroundColor = '#EDB406'
       }
     }
   },
 
   mounted() {
-      window.addEventListener('scroll', this.handleScroll);
-      window.addEventListener('resize',this.handleScroll)
+    this.windowWidth = window.innerWidth
+    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleScroll)
   },
 }
 </script>
@@ -173,6 +174,7 @@ div {
   margin: 0;
   right: 0;
 }
+
 .mobile {
   display: none !important;
 }
@@ -219,11 +221,13 @@ div {
     display: flex !important;
     max-height: 100%;
   }
-  .mobile>img{
+
+  .mobile > img {
     width: 66px;
     aspect-ratio: 1/1;
   }
-  .logo{
+
+  .logo {
     max-height: 100%;
   }
 
@@ -239,14 +243,17 @@ div {
     align-items: center;
     max-height: 100%;
 
-}
-  .logo>a:not(.mobile){
+  }
+
+  .logo > a:not(.mobile) {
     display: none;
   }
+
   .call {
     display: none;
   }
-  .menu{
+
+  .menu {
     top: 130%;
   }
 }
