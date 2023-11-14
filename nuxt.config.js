@@ -57,13 +57,9 @@ export default {
       /* module options */
       id: '3417864',
       debug: false,
-    }
-    ],
+    }],
+  ],
 
-    // Build Configuration: https://go.nuxtjs.dev/config-build
-    build
-:
-{
-}
-,
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
 }
